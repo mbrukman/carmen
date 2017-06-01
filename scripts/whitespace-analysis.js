@@ -1,6 +1,7 @@
 let fs = require('fs');
 let split = require('split');
 let stream = require('stream');
+let termops = require('../lib/util/termops.js');
 
 // 1. Add a basic no-op CLI command scripts/whitespace-analysis.js that
 // can handle an input stream and output the input without any changes
@@ -18,30 +19,18 @@ let stream = require('stream');
 // Springfield Town  => springfieldtown
 
 
-// 
+//
 // you may want to continue to read from `process.stdin`
 // by using stdin you can let `cat` do the file reading for you
 //
 // ```cat <any file> | <your command>
 // ```
 
-
-let file1 = require('../us-address-text-unique.txt');
-
 process.stdin
-.pipe(split())
-.on('data', function(line) {
-    console.log('Heres a line: ' + line);
-});
-
-let converter = new stream.Transform({ objectMode: true });
-converter._transform = function(data, enc, callback) {
-    let query = data.toString()
-    this.push(query + '\n');
-    callback();
-};
-
-
+    .pipe(split())
+    .on('data', function(line) {
+        console.log(termops.removeWhiteSpace(line));
+    });
 
 
 // # Next pass lets you go backwards from result to possible input values
