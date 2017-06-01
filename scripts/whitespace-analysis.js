@@ -20,15 +20,50 @@ const termops = require('../lib/util/termops.js');
 // Spring Field Town => springfieldtown
 // Springfield Town  => springfieldtown
 
-
-process.stdin
-    .pipe(split())
-    .on('data', function(line) {
-      let result = line.toLowerCase();
-      result = termops.removeWhiteSpace(result)
-        console.log(result);
-    });
-
-
 // # Next pass lets you go backwards from result to possible input values
 // springfieldtown => ["Spring Field Town", "Springfield Town"]
+
+
+// What percentage of strings in each dataset end up overlapping with others
+// once normalized?
+//
+// What are the actual string values that do end up overlapping?
+// Which ones overlap in a potentially positive way
+// (e.g. if Lake View Rd and Lakeview Rd collapse, that’s “positive” in
+//   that users may expect to find one when searching for the other)?
+// Which ones overlap in a potentially unexpected or negative way?
+
+let total = 0;
+let hash = {};
+let result = 0;
+let sameAmt = 0;
+let array = [];
+
+process.stdin
+  .pipe(split())
+  .on('data', (line) => {
+    // normalize the lien
+      let resultLine = line.toLowerCase();
+      resultLine = termops.removeWhiteSpace(resultLine);
+      // track total lines
+      total++;
+      // track # of times the line is the same
+      if (hash[resultLine] !== undefined) {
+          sameAmt++;
+      } else {
+          hash[resultLine] = [];
+      }
+      hash[resultLine].push(line);
+  })
+  .on('end', () => {
+      console.log(hash);
+
+      Object.keys(hash).forEach((el) => {
+          if (hash[el].length > 1) {
+              array.push(hash[el]);
+          }
+      });
+      console.log(array);
+      result = sameAmt/total;
+      console.log(result);
+  });
