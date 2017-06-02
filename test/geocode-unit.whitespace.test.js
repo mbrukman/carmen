@@ -35,12 +35,14 @@ const conf = {
 };
 const c = new Carmen(conf);
 
-tape('index New York', (t) => {
+tape('index New York', (assert) => {
     queueFeature(conf.test, {
       "id": 7,
       "type": "Feature",
       "properties": {
-        "carmen:text": "New York"
+        "carmen:text": "New York",
+        'carmen:zxy':['6/32/32'],
+        'carmen:center':[0,0]
       },
       "geometry": {
         "type": "Point",
@@ -49,12 +51,26 @@ tape('index New York', (t) => {
           40.72852712420599
         ]
       }
-    }, () => { buildQueued(conf.test, t.end); });
+    }, () => { buildQueued(conf.test, assert.end); });
 });
 
-tape('query for New York', (t) => {
+tape('query for New York', (assert) => {
     c.geocode('New York', { limit_verify:1 }, (err, res) => {
-        console.log(res);
-        t.end();
+        assert.deepEqual(res.features[0].place_name, 'New York', 'query for "New York" returns "New York"');
+        assert.end();
     });
 });
+
+tape('query for New York', (assert) => {
+    c.geocode('newyork', { limit_verify:1 }, (err, res) => {
+        console.log(res);
+        // assert.deepEqual(res.features[0].place_name, 'New York', 'query for "newyork" returns "New York"');
+        assert.equal(res.features.length > 0, true, 'query for "newyork" returns any feature');
+        assert.end();
+    });
+});
+//
+// tape('teardown', (t) => {
+//     context.getTile.cache.reset();
+//     t.end();
+// });
