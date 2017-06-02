@@ -1,25 +1,3 @@
-// https://github.com/mapbox/carmen/issues/633
-// Carmen unit tests often follow an outline along the lines of
-// /test/geocode-unit.unicode.test.js.
-//
-// Define a new geocoder (“Carmen”) instance and configuration. Index some data.
-// (test/geocode-unit.unicode.test.js#L17-L56
-// Run some searches against the index and confirm that the searches
-// find the expected results.
-// /test/geocode-unit.unicode.test.js#L58-L132
-// Clean up.
-// /test/geocode-unit.unicode.test.js#L135-L138
-// Each of these tests usually differ in that they target specific
-// functionality based on what they index and what they expect to find
-// based on that data. For example, the test above focuses on how carmen
-// handles unicode characters. Other tests focus on how results are ranked
-// and prioritized, how addresses are returned, and so on.
-//
-//  Add a new unit test test/geocode-unit.whitespace.test.js
-//  Index a feature with a string that includes whitespace
-//  Query the index for that string including whitespace and excluding
-// whitespace and assert that it finds the feature in both cases
-
 const tape = require('tape');
 const Carmen = require('..');
 const context = require('../lib/context');
@@ -63,12 +41,12 @@ tape('query for New York', (assert) => {
 
 tape('query for New York', (assert) => {
     c.geocode('newyork', { limit_verify:1 }, (err, res) => {
-        console.log(res);
-        // assert.deepEqual(res.features[0].place_name, 'New York', 'query for "newyork" returns "New York"');
+        assert.deepEqual(res.features[0].place_name, 'New York', 'query for "newyork" returns "New York"');
         assert.equal(res.features.length > 0, true, 'query for "newyork" returns any feature');
         assert.end();
     });
 });
+
 //
 // tape('teardown', (t) => {
 //     context.getTile.cache.reset();
