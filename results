@@ -2907,15 +2907,15 @@ ok 1628 truncates score < 0
 ok 1629 truncates score > 7
 ok 1630 fuzz test x1000
 # setup a
-ok 1631 completed indexing a in 10866ms
+ok 1631 completed indexing a in 11843ms
 # setup b
-ok 1632 completed indexing b in 12153ms
+ok 1632 completed indexing b in 10694ms
 # merge a + b = c
 ok 1633 null
-ok 1634 merged freq in 239ms
-ok 1635 merged grid in 1526ms
-ok 1636 merged feature in 1635ms
-ok 1637 merged stat in 1082ms
+ok 1634 merged freq in 237ms
+ok 1635 merged grid in 1585ms
+ok 1636 merged feature in 1522ms
+ok 1637 merged stat in 921ms
 # index - streaming interface
 # index docs.json
 ok 1638 null
@@ -2966,10 +2966,10 @@ ok 1663 undefined
 # index docs.json in its entirety
 ok 1664 null
 # multi-way merged indexes
-# starting merge of /tmp/1499729830191_3594.mbtiles and /tmp/1499729830191_6936.mbtiles into /tmp/mrg.CxckU426x/merge-0000.mbtiles
-# completed merge of /tmp/1499729830191_3594.mbtiles and /tmp/1499729830191_6936.mbtiles into /tmp/mrg.CxckU426x/merge-0000.mbtiles
-# starting merge of /tmp/1499729830191_4238.mbtiles and /tmp/mrg.CxckU426x/merge-0000.mbtiles into /tmp/1499729830614_5098.mbtiles
-# completed merge of /tmp/1499729830191_4238.mbtiles and /tmp/mrg.CxckU426x/merge-0000.mbtiles into /tmp/1499729830614_5098.mbtiles
+# starting merge of /tmp/1499730098250_126.mbtiles and /tmp/1499730098250_0225.mbtiles into /tmp/mrg.DLSwdhVpZ/merge-0000.mbtiles
+# completed merge of /tmp/1499730098250_126.mbtiles and /tmp/1499730098250_0225.mbtiles into /tmp/mrg.DLSwdhVpZ/merge-0000.mbtiles
+# starting merge of /tmp/1499730098250_2212.mbtiles and /tmp/mrg.DLSwdhVpZ/merge-0000.mbtiles into /tmp/1499730098666_8882.mbtiles
+# completed merge of /tmp/1499730098250_2212.mbtiles and /tmp/mrg.DLSwdhVpZ/merge-0000.mbtiles into /tmp/1499730098666_8882.mbtiles
 Merge worker cleanup complete
 # ensure index was successful for index A after merging
 ok 1665 error
@@ -3060,13 +3060,7 @@ ok 1716 2 grids for language "all" in patch.grid[0]
 ok 1717 patch.grid[0][0]
 ok 1718 should be equivalent
 ok 1719 should be equivalent
-not ok 1720 should be equivalent
-  ---
-    operator: deepEqual
-    expected: [ 'main st', 'main' ]
-    actual:   [ 'mainst', 'main' ]
-    at: Test.tape (/Users/andreadelrio/carmen/test/indexdocs.test.js:57:7)
-  ...
+ok 1720 should be equivalent
 # indexdocs.standardize
 # indexdocs.standardize - carmen:center & carmen:zxy calculated
 carmen:center did not fall within the provided geometry for 1 (main street). Calculating new point on surface.
@@ -3300,15 +3294,15 @@ ok 1884 should be equivalent
 # bench x5 (indexCount=5, termCount=10)
 ok 1885 avg time 5ms
 # bench x5 (indexCount=6, termCount=10)
-ok 1886 avg time 11ms
+ok 1886 avg time 26ms
 # bench x5 (indexCount=7, termCount=10)
-ok 1887 avg time 32ms
+ok 1887 avg time 65ms
 # bench x5 (indexCount=8, termCount=10)
-ok 1888 avg time 179ms
+ok 1888 avg time 219ms
 # bench x5 (indexCount=9, termCount=10)
-ok 1889 avg time 862ms
+ok 1889 avg time 575ms
 # bench x5 (indexCount=10, termCount=10)
-ok 1890 avg time 2004ms
+ok 1890 avg time 1964ms
 # termops.encodableText
 ok 1891 encodes latin range
 ok 1892 encodes CJK range
@@ -3642,6 +3636,6 @@ ok 2157 okay, talstr
 
 1..2157
 # tests 2157
-# pass  2154
-# fail  3
+# pass  2155
+# fail  2
 
