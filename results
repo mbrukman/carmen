@@ -1,0 +1,3693 @@
+TAP version 13
+# index address
+# index pois
+# build queued features
+# Search for Starbucks
+ok 1 stacked relevance
+ok 2 two features returned
+# teardown
+# nearest
+ok 3 nearest startpoint
+ok 4 nearest endpoint
+ok 5 outside threshold
+# nearest stability 1
+ok 6 should be equivalent
+ok 7 should be equivalent
+# nearest stability 2
+ok 8 should be equivalent
+ok 9 should be equivalent
+ok 10 should be equivalent
+ok 11 should be equivalent
+# nearest stability 3
+ok 12 should be equivalent
+ok 13 should be equivalent
+ok 14 should be equivalent
+# address.reverse - null ITP
+ok 15 should be equivalent
+ok 16 should be equivalent
+# address.reverse
+ok 17 should be equivalent
+ok 18 should be equivalent
+# address.matchSide
+ok 19 Right Side Match
+ok 20 Left Side Match
+# address.getReversePoint
+ok 21 left centre side of line
+ok 22 right centre side of line
+ok 23 before start of line
+ok 24 after end of line
+# address.lineIntersects
+ok 25 should be equivalent
+ok 26 should be equal
+# address.standardize
+ok 27 canvec rangetype
+ok 28 should be equivalent
+ok 29 point
+ok 30 linestring
+ok 31 null GC
+ok 32 double null GC
+ok 33 single GC
+ok 34 double GC
+# address.det2D
+ok 35 should be equal
+ok 36 should be equal
+ok 37 should be equal
+ok 38 should be equal
+# address.sign
+ok 39 should be equal
+ok 40 should be equal
+ok 41 should be equal
+# address.parseSemiNumber
+ok 42 should be equal
+ok 43 should be equal
+ok 44 should be equal
+# address.calculateDistance
+ok 45 should be equal
+ok 46 should be equal
+# address.setPoint
+ok 47 x2, forward
+ok 48 x2, reverse
+ok 49 x2, identity (line)
+ok 50 x2, identity (address)
+ok 51 x3, forward
+ok 52 x3, reverse
+ok 53 x3, identity (line)
+ok 54 x3, identity (address)
+# address interpolation - noop
+ok 55 should be equivalent
+ok 56 should be equivalent
+ok 57 should be equivalent
+# address interpolation - parity: even + both
+ok 58 should be equivalent
+# address point clustering
+ok 59 should be equivalent
+ok 60 should be equivalent
+# reverse address point clustering
+ok 61 should be equivalent
+ok 62 should be equivalent
+# address point clustering not point
+ok 63 should be equivalent
+# address point clustering fail
+ok 64 should be equivalent
+# parity: even + even
+ok 65 should be equivalent
+# parity: even + odd
+ok 66 should be equivalent
+# parity: odd + both
+ok 67 should be equivalent
+# parity: odd + odd
+ok 68 should be equivalent
+# parity: odd + even
+ok 69 should be equivalent
+# reverse
+ok 70 should be equivalent
+# seminumber
+ok 71 should be equivalent
+# multi
+ok 72 should be equivalent
+# check if point is inside polygon
+ok 73 should be equal
+# check if point is outside polygon
+ok 74 should be equal
+# check if polygons intersect
+ok 75 should be equal
+# check if polygons do not intersect
+ok 76 should be equal
+# should convert bbox to xyz coords
+ok 77 should be equivalent
+# clean tmp index
+# index
+ok 78 null
+ok 79 null
+ok 80 null
+ok 81 null
+can't index text for index index because it has no lang code en
+can't index text for index index because it has no lang code es
+can't index text for index index because it has no lang code en
+can't index text for index index because it has no lang code es
+ok 82 null
+# bin/carmen-index
+ok 83 null
+ok 84 finds help menu
+# bin/carmen-index
+ok 85 should be truthy
+# bin/carmen-index
+ok 86 null
+# bin/carmen DEBUG
+ok 87 null
+ok 88 finds canada
+ok 89 debug phrase match
+ok 90 debug spatial
+ok 91 debug spatial
+ok 92 debug verify match
+ok 93 debug verify match
+# bin/carmen
+ok 94 should be equal
+ok 95 should be equal
+# bin/carmen version
+ok 96 null
+ok 97 should be truthy
+# bin/carmen query
+ok 98 null
+ok 99 finds brazil
+# bin/carmen query w/ stats
+ok 100 null
+ok 101 ensure load stat is an elapsed delta of less than an hour
+ok 102 ensure phrasematch stat is an elapsed delta of less than an hour
+ok 103 ensure spatialmatch stat is an elapsed delta of less than an hour
+ok 104 ensure verifymatch stat is an elapsed delta of less than an hour
+ok 105 ensure totaltime stat is an elapsed delta of less than an hour
+# bin/carmen query w/ global tokens
+ok 106 null
+ok 107 finds canada
+# bin/carmen query types
+ok 108 null
+ok 109 finds brazil
+# bin/carmen query wrong types
+ok 110 not a type
+# bin/carmen query wrong stacks
+ok 111 not a stack
+# bin/carmen query language=es
+ok 112 null
+ok 113 finds brasil
+# bin/carmen query language=es,en
+ok 114 null
+ok 115 finds brasil
+# bin/carmen-copy noargs
+ok 116 should be equal
+ok 117 should be equal
+# bin/carmen-copy 1arg
+ok 118 should be equal
+ok 119 should be equal
+# bin/carmen-copy
+ok 120 null
+ok 121 should be equal
+ok 122 should be equal
+ok 123 should be equal
+ok 124 cleanup
+# #get
+ok 125 should be equivalent
+ok 126 throws on misuse
+# #list
+ok 127 should be equivalent
+# #get
+ok 128 should be equivalent
+ok 129 should be equal
+# #pack
+ok 130 cache.set throws on empty grid value
+ok 131 should be truthy
+# #load
+ok 132 should be equal
+ok 133 should be equal
+ok 134 should be equivalent
+ok 135 should be equivalent
+ok 136 should be equivalent
+ok 137 should be equivalent
+ok 138 keys in cache
+ok 139 should be equivalent
+ok 140 keys in cache
+# closestLangLabel
+ok 141 should be equal
+ok 142 should be equal
+ok 143 should be equal
+ok 144 should be equal
+ok 145 should be equal
+ok 146 should be equal
+ok 147 should be equal
+ok 148 should be equal
+ok 149 should be equal
+ok 150 should be equal
+# Arabic fallback
+ok 151 should be equal
+# handle nulls
+ok 152 should be equal
+# handle nulls w/ prefix
+ok 153 should be equal
+# universal
+ok 154 should be equal
+ok 155 should be equal
+# getText
+ok 156 should be equivalent
+ok 157 should be equivalent
+ok 158 should be equivalent
+# serbian fallbacks
+ok 159 sr-BA falls back to sr_Latn
+ok 160 sr-CS falls back to sr_Latn
+ok 161 sr-ME falls back to sr_Latn
+ok 162 sr-RS falls back to sr_Latn
+ok 163 sr-XX falls back to sr_Latn
+ok 164 use hr if sr_Latn not present
+ok 165 use bs if sr_Latn and hr not present
+ok 166 no equivalent language matching unless explicitly set
+ok 167 no mixed scripts in strict mode
+# context.stackFeatures noop
+ok 168 0 features => []
+# context.stackFeatures simple
+ok 169 2 features stacked
+# context.stackFeatures type bump
+ok 170 1 feature stacked, 1 bumped
+# context.stackFeatures conflict
+ok 171 2 features stacked, 1 bumped
+# context.stackFeatures conflict, dist tiebreak
+ok 172 2 features stacked, 1 bumped, conflict priorities nearest feature
+# context.stackFeatures multitype
+ok 173 1 feature stacked, promoted
+ok 174 alters extid
+# context.stackFeatures multitype, gap
+ok 175 2 features stacked, 1 promoted
+ok 176 should be equivalent
+ok 177 should be equivalent
+# context.stackFeatures multitype, nogap
+ok 178 3 features stacked
+ok 179 should be equivalent
+ok 180 should be equivalent
+ok 181 should be equivalent
+# contextVector deflate
+ok 182 null
+ok 183 should be equivalent
+ok 184 should be equivalent
+# contextVector gzip
+ok 185 null
+ok 186 should be equivalent
+ok 187 should be equivalent
+# contextVector badbuffer
+ok 188 should be equal
+# contextVector empty VT buffer
+ok 189 null
+ok 190 null
+# nearestPoints empty VT buffer
+ok 191 null
+ok 192 null
+ok 193 should be equivalent
+# nearestPoints scoreFilter
+ok 194 null
+ok 195 * now testing context.nearestPoints() without scoreFilter
+ok 196 null
+ok 197 got two features back
+ok 198 coordinate 0,0 is zero
+ok 199 coordinate 0,1 is zero
+ok 200 coordinate 1,0 is zero
+ok 201 coordinate 1,1 is zero
+ok 202 feature 0 has tmpid
+ok 203 feature 1 has tmpid
+ok 204 feature 0 has distance
+ok 205 feature 1 has distance
+ok 206 * now testing context.nearestPoints() with scoreFilter
+ok 207 null
+ok 208 got one feature back
+ok 209 higher-scoring feature retrieved
+# contextVector ignores negative score
+ok 210 null
+ok 211 null
+ok 212 should be equal
+# contextVector only negative score
+ok 213 null
+ok 214 null
+ok 215 should be equal
+# contextVector matched negative score
+ok 216 null
+ok 217 null
+ok 218 should be equal
+# contextVector grabbed exclusive ID
+ok 219 null
+ok 220 null
+ok 221 should be equal
+# contextVector restricts distance
+ok 222 null
+ok 223 null
+ok 224 should be equal
+# contextVector sorts ties A
+ok 225 null
+ok 226 null
+ok 227 should be equal
+# contextVector sorts ties A
+ok 228 null
+ok 229 null
+ok 230 should be equal
+# contextVector sorts ties B (matched)
+ok 231 null
+ok 232 null
+ok 233 should be equal
+# contextVector caching
+ok 234 null
+ok 235 null
+ok 236 should be equal
+ok 237 hits +0
+ok 238 miss +1
+ok 239 null
+ok 240 should be equal
+ok 241 hits +1
+ok 242 miss +0
+# Context eliminates correct properties
+ok 243 null
+ok 244 found expected keys on country object
+ok 245 found expected keys on region object
+# teardown
+# copy
+# update
+can't index text for index from because it has no lang code fa
+# blank
+ok 246 null
+ok 247 should be equivalent
+# copies
+ok 248 undefined
+ok 249 should be equivalent
+# analyzes copy
+ok 250 null
+ok 251 should be equivalent
+# create
+ok 252 dawg created
+# dump/load
+ok 253 null
+ok 254 gzipped dictcache < 200k
+ok 255 null
+ok 256 has a1
+ok 257 has a2
+ok 258 has a3
+ok 259 has a4
+ok 260 not a5
+ok 261 not a
+ok 262 has a as degen
+# invalid data
+ok 263 should throw
+# dedup lowercase vs caps
+ok 264 dedupes by lowercase vs caps
+# dedup - change relev order
+ok 265 should be equal
+ok 266 should be equal
+ok 267 should be equal
+ok 268 should be equal
+ok 269 should be equal
+ok 270 should be equal
+ok 271 should be equal
+ok 272 should be equal
+ok 273 should be equal
+ok 274 should be equal
+# dedupe
+ok 275 dedupes by place_name
+ok 276 dupe identical addresses when dist >= 5km
+ok 277 dedupes identical addresses when dist < 5km
+ok 278 dedupes identical addresses + placenames when dist < 5km
+ok 279 dedupes identical addresses, prioritizes non-interpolated
+ok 280 dedupes identical addresses, prioritizes non-interpolated
+ok 281 dedupes identical addresses, prioritizes non-omitted
+ok 282 dedupes identical addresses, prioritizes non-omitted
+# removeDiacritics
+ok 283 diacritics are removed from latin text
+ok 284 nothing happens to latin text with no diacritic marks
+ok 285 nothing happens to Japanese text
+ok 286 nothing happens to Hindi text
+ok 287 greek diacritics are removed and other characters stay the same
+ok 288 cyrillic diacritics are removed and other characters stay the same
+ok 289 arabic diacritics are removed and other characters stay the same
+# putFeatures
+ok 290 should be truthy
+ok 291 null
+ok 292 has feature shard 1
+ok 293 has feature shard 2
+# getFeatureByCover
+ok 294 should be equal
+# getFeatureByCover
+ok 295 should be equal
+# getFeatureByCover, collision
+ok 296 should be equal
+# getFeatureById
+ok 297 should be equal
+# shard
+ok 298 shardlevel=0, shards=16
+ok 299 shardlevel=1, shards=256
+ok 300 shardlevel=2, shards=4096
+ok 301 shardlevel=3, shards=65536
+ok 302 shardlevel=4, shards=1048576
+ok 303 shardlevel=5, shards=1048576
+ok 304 shardlevel=6, shards=1048576
+# filter.sourceMatchesStacks
+ok 305 allowed: source without stack
+ok 306 allowed: stack intersect
+ok 307 disallowed: stack disjoint
+# filter.sourceMatchesTypes
+ok 308 allowed: source with matching type
+ok 309 allowed: source with matching subtype
+ok 310 allowed: source with matching subtype
+ok 311 disallowed: source with non-matched subtype
+# filter.featureMatchesStacks
+ok 312 allowed: source without stack
+ok 313 allowed: stack intersect
+ok 314 disallowed: stack disjoint
+# filter.featureMatchesTypes
+ok 315 allowed: feature with matching type
+ok 316 allowed: feature with matching type
+ok 317 allowed: feature with matching type
+ok 318 allowed: feature with matching subtype
+ok 319 disallowed: feature without matching type
+ok 320 disallowed: feature without matching subtype
+ok 321 disallowed: feature without matching subtype
+# filter.featureMatchesLanguage
+ok 322 allowed: languageMode !== strict
+ok 323 allowed: language is not defined
+ok 324 allowed: matching language text
+ok 325 allowed: matching language text
+ok 326 allowed: matching fallback language text
+ok 327 disallowed: matching fallback language text
+ok 328 disallowed: no matching text
+ok 329 allowed: text_universal
+ok 330 allowed: sr/hr equivalency
+# filter.equivalentLanguages
+ok 331 should be truthy
+# index alphanum address
+# test address index for alphanumerics
+ok 332 null
+ok 333 found 9b fake street
+ok 334 should be equal
+# index address
+# index address
+# build queued features
+# test address index with double number
+ok 335 null
+ok 336 Found: 70 WASHINGTON STREET
+ok 337 should be equal
+# index alphanum address
+# test address index for alphanumerics
+ok 338 null
+ok 339 found 9b fake street
+ok 340 should be equal
+# index address
+# test address query with alphanumeric
+ok 341 null
+ok 342 found 9b fake street
+ok 343 should be equal
+# index address
+# test alphanumeric address query with address range
+ok 344 null
+ok 345 found 9b fake street
+ok 346 should be equal
+ok 347 address number is 9b
+# test alphanumeric address query with invalid address number
+ok 348 null
+ok 349 fake street
+ok 350 appropriate relevance (9bc token should not be matched)
+ok 351 address number is not defined
+# index address
+# test alphanumeric address query with address range
+ok 352 null
+ok 353 found 9b fake street
+ok 354 should be equal
+ok 355 address number is 9b
+# test alphanumeric address query with invalid address number
+ok 356 null
+ok 357 fake street
+ok 358 appropriate relevance (9bc token should not be matched)
+ok 359 address number is not defined
+# index fake UK address range
+# index fake UK postcode
+# build queued features
+# test UK postcode not getting confused w/ address range
+ok 360 found feature 'B77 1AB'
+ok 361 should be equal
+ok 362 feature is from layer postcode
+ok 363 result set does not include address feature
+# index address
+# test hyphenated address query with address range
+ok 364 null
+ok 365 found 23-414 beach street
+ok 366 should be equal
+# teardown
+# index address
+# index address
+# index address
+# build queued features
+# full address
+ok 367 null
+ok 368 500
+# no address
+ok 369 null
+ok 370 should be falsy
+# only number
+ok 371 null
+ok 372 should be falsy
+# lettered address
+ok 373 null
+ok 374 should be equal
+# lettered address
+ok 375 null
+ok 376 should be equal
+# numbered street address
+ok 377 null
+ok 378 should be equal
+# numbered street address
+ok 379 null
+ok 380 should be equal
+# test us number street with address
+ok 381 null
+ok 382 100 1 test street
+ok 383 should be equal
+# teardown
+# index address
+# Search for germany style address
+ok 384 null
+ok 385 should be equal
+# Search for us style address, return with german formatting
+ok 386 null
+ok 387 should be equal
+# index address
+# Search for germany style address - with language tag but no german vaue
+ok 388 null
+ok 389 should be equal
+# Search for us style address, return with german formatting --  with language tag but no german vaue
+ok 390 null
+ok 391 should be equal
+# Search for us style address, return with us formatting
+ok 392 null
+ok 393 should be equal
+# Bad language code
+ok 394 null
+ok 395 should be equal
+# index country
+# index region
+# index place
+# index postcode
+# index address
+# index poi
+# build queued features
+# Search for an address (multiple layers)
+ok 396 null
+ok 397 should be equal
+# Search for an address without a number (multiple layers)
+ok 398 null
+ok 399 should be equivalent
+# Search for a city (multiple layers)
+ok 400 null
+ok 401 should be equal
+# Search for a poi (multiple layers)
+ok 402 null
+ok 403 should be equal
+# index address
+# test address index for US relev
+ok 404 null
+ok 405 should be equal
+# test address index for DE relev
+ok 406 null
+ok 407 should be equal
+# index address
+# test address index for relev
+ok 408 null
+ok 409 should be equal
+# index place
+# index kitten
+# build queued features
+# Search for an address using a template that has nonstandard properites
+ok 410 null
+ok 411 should be equal
+# Search for a custom property with non-carmen templating
+ok 412 null
+ok 413 should be equal
+# teardown
+# index alphanum address
+# test address index for alphanumerics
+ok 414 null
+ok 415 Matched ITP
+ok 416 should be equal
+# index icelandic address
+# test address index for Grundarstræti
+ok 417 null
+ok 418 Matched ITP
+ok 419 should be equal
+# teardown
+# index address
+# test address query with address range
+ok 420 null
+ok 421 found 9 fake street
+ok 422 should be equal
+# tiger, between the lines
+# test tiger interpolation house number
+ok 423 null
+ok 424 found 102 fake street
+ok 425 should be equal
+# teardown
+# index postcode
+# index city
+# index street 1
+# index street 2
+# build queued features
+# lessingstrasse koln 50825
+ok 426 null
+ok 427 should be equivalent
+ok 428 should be equivalent
+ok 429 should be equivalent
+# lessingstrasse 50825 koln
+ok 430 null
+ok 431 should be equivalent
+ok 432 should be equivalent
+ok 433 should be equivalent
+# teardown
+# index feature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# addFeature
+# index feature
+# index feature
+# build queued features
+# fake bbox
+ok 434 bbox array length = 3
+ok 435 non-numeric bbox param
+ok 436 maxY out-of-bounds
+# no bbox
+ok 437 null
+ok 438 should be equal
+# with bbox
+ok 439 null
+ok 440 should be equal
+# teardown
+# boundsmask
+ok 441 small overlaps with all
+ok 442 west overlaps with small
+ok 443 east overlaps with small
+ok 444 should be truthy
+# index country
+# index place
+# build queued features
+# query byid
+ok 445 null
+ok 446 should be equal
+ok 447 found by id
+ok 448 found by id
+# query byid
+ok 449 null
+ok 450 should be equal
+ok 451 found by id
+ok 452 found by id
+# teardown
+# index address
+# index addressitp
+# build queued features
+# test address query with address range
+ok 453 null
+ok 454 found 100 fake street
+ok 455 should be equal
+# test reverse address query with address range
+ok 456 null
+ok 457 found 100 fake street
+ok 458 should be equal
+# teardown
+# index place_a
+# index place_b
+# index street_a
+# index street_b
+# build queued features
+# geocoder_name dedupe
+ok 459 null
+ok 460 should be equivalent
+ok 461 should be equivalent
+ok 462 should be equivalent
+ok 463 should be equivalent
+# teardown
+# index address (dataterm only)
+# build queued features
+# test address
+ok 464 null
+ok 465 should be equal
+# teardown
+# index address (noise)
+# index country
+# index postcode
+# build queued features
+# test address
+ok 466 null
+ok 467 should be equivalent
+# teardown
+# index address (noise)
+# index address (signal)
+# build queued features
+# test address
+ok 468 null
+ok 469 found 1500 fake street
+ok 470 should be equal
+# teardown
+# index province
+# index city 1
+# index city 2
+# index street 1
+# index street 2
+# build queued features
+# west st, tonawanda, ny
+ok 471 null
+ok 472 debugs id
+ok 473 debugs extid
+ok 474 debug keys
+ok 475 debugs matched phrases
+ok 476 should be equivalent
+ok 477 should be equivalent
+ok 478 should be equivalent
+ok 479 should be equivalent
+ok 480 should be equivalent
+ok 481 should be equivalent
+# west st, tonawanda, ny
+ok 482 null
+ok 483 debugs id
+ok 484 debugs extid
+ok 485 debug keys
+ok 486 debugs matched phrases
+ok 487 should be equivalent
+ok 488 should be equivalent
+ok 489 should be equivalent
+ok 490 should be equivalent
+ok 491 should be equivalent
+ok 492 should be equivalent
+ok 493 should be equivalent
+ok 494 should be equivalent
+ok 495 should be equivalent
+ok 496 should be equivalent
+ok 497 should be equivalent
+# teardown
+# index unicode place
+# build queued features
+# valid match
+ok 498 null
+ok 499 should be equal
+# teardown
+# index address
+# build queued features
+# test address
+ok 500 null
+not ok 501 should be equal
+  ---
+    operator: equal
+    expected: 'Brehmestraße 56'
+    actual:   undefined
+    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.early-degen.test.js:43:11)
+  ...
+# test address
+ok 502 null
+not ok 503 should be equal
+  ---
+    operator: equal
+    expected: 'Brehmestraße 56'
+    actual:   undefined
+    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.early-degen.test.js:50:11)
+  ...
+# teardown
+# rejects a heavy emoji query quickly
+ok 504 null
+ok 505 takes less than 50ms to reject query
+ok 506 finds no features
+# teardown
+# index emoji country
+# index non-emoji country
+# build queued features
+# should not find emoji feaure
+ok 507 null
+ok 508 finds no features
+# should not find feaure (atm or ever -- different emoji)
+ok 509 null
+ok 510 finds no features
+# should handle a query including emoji
+ok 511 null
+ok 512 finds Anarres
+# teardown
+# index place "Cold City"
+# index address "Main St" in "Cold City"
+# index address "Market" in "Cold City"
+# index place Seattle
+# index postcode "12345" in Seattle
+# index region "Washington" lines up with Seattle
+# build queued features
+# 3(Cold City) vs 3(Seattle): 100 Main St, 12345 Seattle, Washington
+ok 513 null
+ok 514 matches Seattle instead of address
+ok 515 should be equal
+ok 516 found postcode.id
+# 2(Cold City) vs 3(Seattle): 100 Market 12345 Seattle Washington
+ok 517 null
+ok 518 should be equal
+ok 519 should be equal
+ok 520 found address.id
+# 3(Cold City) vs 2(Seattle): 100 Main St, Seattle Washington
+ok 521 null
+ok 522 should be equal
+ok 523 should be equal
+ok 524 found place.id
+# teardown
+# index
+# reverse geocode
+ok 525 null
+ok 526 should be equivalent
+# teardown
+# index "av francisco de aguirre #"
+# index "# r ademar da silva neiva"
+# build queued features
+# search: "av francisco de aguirre 2 la serena"
+ok 527 should be equal
+ok 528 should be equal
+# teardown
+# index province
+# index city 1
+# index city 2
+# index street 1
+# index street 2
+# build queued features
+# west st, tonawanda, ny
+ok 529 null
+ok 530 should be equivalent
+# west st, new york, ny
+ok 531 null
+ok 532 should be equivalent
+# new york
+ok 533 null
+ok 534 should be equivalent
+ok 535 should be equivalent
+# new york new york
+ok 536 null
+ok 537 should be equivalent
+ok 538 should be equivalent
+# ny ny
+ok 539 null
+ok 540 should be equivalent
+ok 541 should be equivalent
+# new york ny
+ok 542 null
+ok 543 should be equivalent
+ok 544 should be equivalent
+# teardown
+# index country ca
+# index country us
+# build queued features
+# Invalid stack - not a stack name
+ok 545 throws error
+# Invalid stack - not an array
+ok 546 throws error
+# query filter
+ok 547 null
+ok 548 should be equal
+# query filter - will be lowercased
+ok 549 null
+ok 550 should be equal
+# query filter
+ok 551 null
+ok 552 should be equal
+# query filter - reverse (ca)
+ok 553 null
+ok 554 should be equal
+ok 555 should be equal
+# query filter - reverse (us)
+ok 556 null
+ok 557 should be equal
+ok 558 should be equal
+# index country ca
+# index country us
+# index place us
+# index place ca
+# build queued features
+# dual filter
+ok 559 null
+ok 560 should be equal
+ok 561 should be equal
+# dual filter
+ok 562 null
+ok 563 should be equal
+ok 564 should be equal
+# index country ca
+# index country us
+# index place ca
+# build queued features
+# Canada
+ok 565 null
+ok 566 should be equal
+ok 567 should be equal
+# United States
+ok 568 null
+ok 569 should be equal
+ok 570 should be equal
+# Place
+ok 571 null
+ok 572 should be equal
+ok 573 should be equal
+# index country high score (us)
+# index place low score (ca)
+# build queued features
+# check stack/idx agreement
+ok 574 null
+ok 575 should be equal
+ok 576 should be equal
+# index country ca
+# index country us
+# index place ca
+# build queued features
+# Canada
+ok 577 null
+ok 578 should be equal
+ok 579 should be equal
+# United States
+ok 580 null
+ok 581 should be equal
+ok 582 should be equal
+# Place
+ok 583 null
+ok 584 should be equal
+ok 585 should be equal
+# teardown
+# index address
+# index poi
+# build queued features
+# query on address but still returns poi due to index order
+ok 586 null
+ok 587 found POI
+ok 588 should be equal
+# query on address with type poi
+ok 589 null
+ok 590 found POI
+ok 591 should be equal
+# query on poi with type address
+ok 592 null
+ok 593 found address
+ok 594 should be equal
+# index address
+# index poi
+# build queued features
+# address query returns address
+ok 595 null
+ok 596 found address
+ok 597 should be equal
+# poi query returns poi
+ok 598 null
+ok 599 found POI
+ok 600 should be equal
+# query on address with type poi
+ok 601 null
+ok 602 should be equal
+ok 603 should be equal
+# query on poi with type address
+ok 604 null
+ok 605 should be equal
+ok 606 should be equal
+# index address
+# index poi
+# build queued features
+# return poi if type filtering removes address
+ok 607 null
+ok 608 should be equal
+ok 609 should be equal
+# return address if type filtering removes poi
+ok 610 null
+ok 611 should be equal
+ok 612 should be equal
+# index place
+# index place
+# build queued features
+# Overlapping places return closest centroid
+ok 613 null
+ok 614 found Logan Circle
+ok 615 should be equal
+# teardown
+# index country
+# index region
+# index place
+# index postcode
+# index address
+# build queued features
+# Search for an address & check indexes
+ok 616 null
+ok 617 should be equivalent
+# Search for an id & check indexes
+ok 618 null
+ok 619 should be equivalent
+# Search for a point & check indexes
+ok 620 null
+ok 621 should be equivalent
+# teardown
+# index place
+ok 622 128 indexes configured
+# build queued features
+# query place
+ok 623 null
+ok 624 found Chicago
+ok 625 should be equal
+# reverse place
+ok 626 null
+ok 627 found Chicago
+ok 628 should be equal
+# teardown
+# test invalid tokens
+ok 629 should throw
+# ready
+# index place
+# io
+ok 630 null
+ok 631 returns 5 features
+ok 632 <= 10 shards loaded: 0
+# index.teardown
+# ready
+# index country
+# index region
+# index place
+# index street
+# build queued features
+# reverse 0,0
+ok 633 null
+ok 634 should be equivalent
+ok 635 country: loads 1 feature
+ok 636 country: loads 1 tile
+ok 637 region: loads 1 feature
+ok 638 region: loads 1 tile
+ok 639 place: loads 1 feature
+ok 640 place: loads 1 tile
+ok 641 street: loads 1 feature
+ok 642 street: loads 1 tile
+# reverse 0,0, types=region
+ok 643 null
+ok 644 should be equivalent
+ok 645 country: loads 1 feature
+ok 646 country: loads 1 tile
+ok 647 region: loads 1 feature
+ok 648 region: loads 1 tile
+ok 649 place: no i/o
+ok 650 place: no i/o
+ok 651 street: no i/o
+ok 652 street: no i/o
+# teardown
+# ready
+# index place 1
+# index street 1
+# index street 1
+# index street 1
+# build queued features
+# index place 2
+# index street 2
+# index street 2
+# index street 2
+# build queued features
+# index place 3
+# index street 3
+# index street 3
+# index street 3
+# build queued features
+# winding river rd springfield
+ok 653 null
+ok 654 should be equivalent
+ok 655 place1: loads nothing
+ok 656 place1: loads 1 tile
+ok 657 street1: loads 1 feature per result
+ok 658 street1: loads no tiles (most specific index)
+# springfield
+ok 659 null
+ok 660 should be equivalent
+ok 661 should be equivalent
+ok 662 should be equivalent
+ok 663 should be equivalent
+ok 664 should be equivalent
+ok 665 place1: loads 1 feature
+ok 666 place1: loads 1 tile
+ok 667 street1: loads 1 feature per result
+ok 668 street1: loads no tiles (most specific index)
+# springfield, types=place
+ok 669 null
+ok 670 should be equivalent
+ok 671 should be equivalent
+ok 672 should be equivalent
+ok 673 place1: loads 1 feature
+ok 674 place1: loads 0 tiles
+ok 675 street1: no io
+ok 676 street1: no io
+# teardown
+# index country
+# index region
+# index place 1
+# index address 1
+# build queued features
+# Check numeric text
+ok 677 null
+ok 678 1 feature
+ok 679 right address
+# Check numeric text
+ok 680 null
+ok 681 1 feature
+ok 682 right address
+# teardown
+# index country
+# index region
+# index place 1
+# index address 1
+# build queued features
+# Check order, 岩出市中黒632
+ok 683 null
+ok 684 Descending order doesn't lower relevance
+# Check order, 632 中黒 岩出市
+ok 685 null
+ok 686 Gets correct address
+ok 687 Unexpected ascending lowers relevance
+# Check order, 632 中黒 Japan 岩出市
+ok 688 null
+ok 689 Gets correct address
+ok 690 Mixed-up order lowers relevance
+# teardown
+# index country
+# build queued features
+# 0,0 ?language=en
+ok 691 null
+ok 692 should be equal
+ok 693 should be equal
+ok 694 language set to "en"
+# 0,0 ?language=es
+ok 695 null
+ok 696 should be equal
+ok 697 should be equal
+ok 698 language set to "es"
+# 0,0 ?language=es-XX
+ok 699 null
+ok 700 should be equal
+ok 701 should be equal
+ok 702 language set to "es"
+# 0,0 ?language=en-XX
+ok 703 null
+ok 704 should be equal
+ok 705 should be equal
+ok 706 language set to "en"
+# teardown
+# index country
+# index city
+# build queued features
+# 中国 => China
+ok 707 null
+ok 708 should be equivalent
+ok 709 should be equivalent
+# 北京市 => Beijing
+ok 710 null
+ok 711 should be equivalent
+ok 712 should be equivalent
+# Beijing, China => 中国北京市
+ok 713 null
+ok 714 should be equivalent
+ok 715 should be equivalent
+# 北京市, 中国 => Beijing, China
+ok 716 null
+ok 717 should be equivalent
+ok 718 should be equivalent
+# 北京市中国 (BeijingChina) => Beijing, China
+ok 719 null
+ok 720 should be equivalent
+ok 721 should be equivalent
+# 中国北京市 (ChinaBeijing) => Beijing, China
+ok 722 null
+ok 723 should be equivalent
+ok 724 should be equivalent
+# teardown
+# index country
+# index city
+# index region
+# index place2
+# build queued features
+# russia => Russian Federation
+ok 725 null
+ok 726 should be equal
+ok 727 should be equal
+ok 728 language not set on default text
+# Severo-Za ==> Northwestern Federal District
+ok 729 null
+ok 730 should be equal
+ok 731 should be equal
+ok 732 language not set on default text
+not ok 733 synonym is included in matching_place_name
+  ---
+    operator: equal
+    expected: |-
+      'Severo-Zapadny federalny okrug, Russian Federation'
+    actual: |-
+      undefined
+    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.language-flag.test.js:141:15)
+  ...
+# Rossiyskaya ==> Russian Federation
+ok 734 null
+ok 735 should be equal
+ok 736 should be equal
+ok 737 language not set on default text
+ok 738 synonym is included in matching_place_name
+# Rossiyskaya Federatsiya => Russian Federation
+ok 739 null
+ok 740 should be equal
+ok 741 should be equal
+ok 742 language not set
+# Rossiyskaya Federatsiya => Российская Федерация - {language: "ru"}
+ok 743 null
+ok 744 should be equal
+ok 745 should be equal
+ok 746 language=ru
+# Rossiyskaya Federatsiya => Российская Федерация - {language: "ru-RU"}
+ok 747 null
+ok 748 should be equal
+ok 749 should be equal
+ok 750 language=ru
+# Rossiyskaya Federatsiya => Russian Federation - {language: "fake"}
+ok 751 should be truthy
+ok 752 should be equal
+ok 753 should be falsy
+# Rossiyskaya Federatsiya => Russian Federation - {language: "es"}
+ok 754 null
+ok 755 should be equal
+ok 756 should be equal
+ok 757 language not set on fall back to default
+# Rossiyskaya Federatsiya => Russian Federation - {language: "fr"}
+ok 758 null
+ok 759 should be equal
+ok 760 should be equal
+ok 761 language not set on fall back to default
+# Rossiyskaya => Russian Federation - {language: "az"}
+ok 762 null
+ok 763 should be equal
+ok 764 should be equal
+ok 765 should be equal
+# Rossiyskaya => Russian Federation - {language: "bg-nonexistent"}
+ok 766 null
+ok 767 should be equal
+ok 768 should be equal
+ok 769 should be equal
+# St Petersburg => Санкт-Петербу́рг, Северо-Западный федеральный округ, Российская Федерация - {language: "ru"}
+ok 770 null
+ok 771 should be equal
+ok 772 should be equal
+ok 773 should be equal
+ok 774 should be equal
+ok 775 should be equal
+ok 776 should be equal
+# St Petersburg, Russia => Санкт-Петербу́рг, Северо-Западный федеральный округ, Российская Федерация - {language: "ru"}
+ok 777 null
+ok 778 should be equal
+ok 779 should be equal
+ok 780 should be equal
+ok 781 should be equal
+ok 782 should be equal
+ok 783 should be equal
+# St Petersberg => Saint Petersburg - {language: "fr"}
+ok 784 null
+ok 785 should be equal
+ok 786 should be equal
+ok 787 should be equal
+ok 788 should be equal
+ok 789 should be equal
+ok 790 should be equal
+# Northwestern Federal District => Российская Федерация, Северо-Западный федеральный округ - {language: "ru"}
+ok 791 null
+ok 792 should be equivalent
+ok 793 should be equivalent
+ok 794 should be equivalent
+# Northwestern Federal District => Российская Федерация, Северо-Западный федеральный округ - {language: "ru-RU"}
+ok 795 null
+ok 796 should be equivalent
+ok 797 should be equivalent
+ok 798 should be equivalent
+# Northwestern Federal District => Российская Федерация, Северо-Западный федеральный округ - {language: "ru"}
+ok 799 null
+ok 800 should be equivalent
+ok 801 should be equivalent
+ok 802 should be equivalent
+# Northwestern Federal District => Российская Федерация, Северо-Западный федеральный округ - {language: "ru"}
+ok 803 null
+ok 804 should be equivalent
+ok 805 should be equivalent
+ok 806 should be equivalent
+# 西北部联邦管区 => Russian Federation西北部联邦管区
+ok 807 null
+ok 808 should be equivalent
+ok 809 should be equivalent
+ok 810 should be equivalent
+# Shenzhen => Shenzhen, Northwestern Federal District, Russian Federation
+ok 811 null
+ok 812 should be equivalent
+ok 813 should be equivalent
+ok 814 should be equivalent
+# Shenzhen => Russian Federation西北部联邦管区深圳市
+ok 815 null
+ok 816 should be equivalent
+ok 817 should be equivalent
+ok 818 should be equivalent
+# 0,0 => Saint Petersburg, Northwestern Federal District, Russian Federation
+ok 819 null
+ok 820 should be equivalent
+ok 821 should be equivalent
+ok 822 should be equivalent
+# 0,0 => Saint Petersburg, 西北部联邦管区, Russian Federation - {language: "zh"}
+ok 823 null
+ok 824 should be equivalent
+ok 825 should be equivalent
+ok 826 should be equivalent
+# Saint Petersburg => Saint Petersburg, 西北部联邦管区, Russian Federation - {language: "zh"}
+ok 827 null
+ok 828 should be equivalent
+ok 829 should be equivalent
+ok 830 should be equivalent
+# Saint Petersburg => Saint Petersburg, 西北部聯邦管區, Russian Federation - {language: "(zh[-_][Hh]ant|zh[-_][Tt][Ww])"}
+ok 831 null
+ok 832 should be equivalent
+ok 833 should be equivalent
+ok 834 null
+ok 835 should be equivalent
+ok 836 should be equivalent
+ok 837 null
+ok 838 should be equivalent
+ok 839 should be equivalent
+ok 840 null
+ok 841 should be equivalent
+ok 842 should be equivalent
+ok 843 null
+ok 844 should be equivalent
+ok 845 should be equivalent
+ok 846 null
+ok 847 should be equivalent
+ok 848 should be equivalent
+ok 849 null
+ok 850 should be equivalent
+ok 851 should be equivalent
+ok 852 null
+ok 853 should be equivalent
+ok 854 should be equivalent
+# fake blah blah => [fail]
+ok 855 null
+ok 856 should be falsy
+# teardown
+# index Hron
+# index Holdout
+# index Cerracs
+# build queued features
+# Find features using default text
+ok 857 null
+ok 858 finds Hron
+# Find feature using language code
+ok 859 null
+ok 860 finds Holdout using a language code
+# Find features using universal text
+ok 861 null
+ok 862 finds features using default text and universal text
+# Finds and ranks features using universal text with language codes
+ok 863 null
+ok 864 finds both features even using a language code
+ok 865 ranks complete match of universal text above autocompleted default text
+# Find universal text feature using strict mode with another language
+ok 866 null
+ok 867 finds Cerracs
+# teardown
+# index country
+# index country2
+# build queued features
+# make sure indexes contain pre-computed fallbacks
+not ok 868 fallbacks have been properly computed
+  ---
+    operator: deepEqual
+    expected: |-
+      [ [ 'india', [ 0, 1 ] ], [ 'united states', [ 0, 1, 2, 3 ] ], [ 'بھارت', [ 3 ] ], [ 'هندوستان', [ 2 ] ] ]
+    actual: |-
+      [ [ 'india', [ 0, 1 ] ], [ 'unitedstates', [ 0, 1, 2, 3 ] ], [ 'بھارت', [ 3 ] ], [ 'هندوستان', [ 2 ] ] ]
+    at: Test.tape (/Users/andreadelrio/carmen/test/geocode-unit.languageFallback.test.js:59:11)
+  ...
+# query: United States
+ok 869 Fallback to English
+ok 870 Language returned is English
+ok 871 null
+# query: India
+ok 872 Heuristically falls back to Urdu
+ok 873 Language returned is Urdu
+ok 874 null
+# teardown
+# index country
+# index postcode
+# build queued features
+# query: 10000
+ok 875 null
+ok 876 should be equal
+# query: 10000, language: es
+ok 877 null
+ok 878 should be equal
+# query: 10000, language: es, languageMode: strict
+ok 879 null
+ok 880 should be equal
+# query: 1,1
+ok 881 null
+ok 882 should be equal
+# query: 1,1, language: es
+ok 883 null
+ok 884 should be equal
+# query: 1,1, language: es, languageMode: strict
+ok 885 null
+ok 886 should be equal
+# teardown
+# index country
+# index country
+# index country
+# build queued features
+# query: c, language: zh, languageMode: strict
+ok 887 null
+ok 888 filters features to just those with "zh" (x1)
+ok 889 0 - China
+# query: c, language: en, languageMode: strict
+ok 890 null
+ok 891 filters features to just those with "en" (x2)
+ok 892 0 - China
+ok 893 1 - Canada
+# query: c, languageMode: strict
+ok 894 null
+ok 895 does nothing without language code
+ok 896 0 - China
+ok 897 1 - Canada
+ok 898 2 - Cambodia
+# query: c, language: en, languageMode: bogus
+ok 899 should be equal
+# query: 1,1, language: zh, languageMode: strict
+ok 900 null
+ok 901 filters features to just those with "zh" (x1)
+ok 902 0 - China
+# query: 1,1, language: en, languageMode: strict
+ok 903 null
+ok 904 filters features to just those with "en" (x2)
+ok 905 0 - China
+ok 906 1 - Canada
+# query: 1,1, languageMode: strict
+ok 907 null
+ok 908 does nothing without language code
+ok 909 0 - China
+ok 910 1 - Canada
+ok 911 2 - Cambodia
+# query: 1,1, language: en, languageMode: bogus
+ok 912 should be equal
+# teardown
+# index country
+# index region
+# index place
+# build queued features
+# query: c, language: zh, languageMode: strict
+ok 913 null
+ok 914 filters features to just those with "zh" (x1)
+ok 915 0 - Chicago
+# query: 1,1, language: zh, languageMode: strict
+ok 916 null
+ok 917 filters features to just those with "zh" (x2)
+ok 918 0 - Chicago
+ok 919 1 - United States
+# query: 1,1, language: en, languageMode: strict
+ok 920 null
+ok 921 filters features to just those with "en" (x1)
+ok 922 0 - Chicago
+ok 923 1 - Illinois
+ok 924 2 - United States
+# query: 1,1, languageMode: strict
+ok 925 null
+ok 926 filters features to just those with "en" (x1)
+ok 927 0 - Chicago
+ok 928 1 - Illinois
+ok 929 2 - United States
+# query: 1,1, language: en, languageMode: bogus
+ok 930 should be equal
+# teardown
+# index country
+# index region
+# index place
+# index place
+# build queued features
+# query: paris, language: sr-Latn, languageMode: strict
+ok 931 null
+ok 932 filters out mixed-script results
+# query: belgrade, language: sr-Latn, languageMode: strict
+ok 933 null
+ok 934 allows hr result
+ok 935 language code is hr
+# query: belgrade, language: hr, languageMode: strict
+ok 936 null
+ok 937 allows hr result
+ok 938 language code is hr
+ok 939 language=hr excludes sr results
+# teardown
+# index country
+# index place
+# build queued features
+# default response is 5 features (forward)
+ok 940 null
+ok 941 returns 5 results
+ok 942 should be equal
+ok 943 should be equal
+ok 944 should be equal
+ok 945 should be equal
+ok 946 should be equal
+# limit 1 result (forward)
+ok 947 null
+ok 948 returns 1 result
+ok 949 should be equal
+# limit 10 results (forward)
+ok 950 null
+ok 951 returns 10 results
+ok 952 should be equal
+ok 953 should be equal
+ok 954 should be equal
+ok 955 should be equal
+ok 956 should be equal
+ok 957 should be equal
+ok 958 should be equal
+ok 959 should be equal
+ok 960 should be equal
+ok 961 should be equal
+# limit 11 results (forward)
+ok 962 null
+ok 963 hard limit of 10
+ok 964 should be equal
+ok 965 should be equal
+ok 966 should be equal
+ok 967 should be equal
+ok 968 should be equal
+ok 969 should be equal
+ok 970 should be equal
+ok 971 should be equal
+ok 972 should be equal
+ok 973 should be equal
+# index place
+# index poi
+# index address
+# build queued features
+# default response is 1 features (reverse)
+ok 974 null
+ok 975 returns 1 result of 3 context
+ok 976 should be equal
+ok 977 should be equal
+ok 978 should be equal
+# Limit only works with type (reverse)
+ok 979 should be truthy
+# limit 2 results (reverse)
+ok 980 null
+ok 981 returns 2 results
+# limit 5 results (reverse)
+ok 982 null
+ok 983 should be equal
+ok 984 should be equal
+ok 985 should be equal
+ok 986 should be equal
+ok 987 should be equal
+ok 988 returns 5 results
+# limit 6 results (reverse)
+ok 989 null
+ok 990 should be equal
+ok 991 should be equal
+ok 992 should be equal
+ok 993 should be equal
+ok 994 should be equal
+ok 995 returns 5 results - hard limit
+# limit 5 results (address)
+ok 996 null
+ok 997 should be equal
+ok 998 should be equal
+ok 999 should be equal
+ok 1000 should be equal
+ok 1001 should be equal
+ok 1002 returns 5 results - hard limit
+# teardown
+# index place
+# index address
+# build queued features
+# Reverse Cluster
+ok 1003 should be equal
+ok 1004 should be equal
+ok 1005 should be equal
+ok 1006 should be equal
+ok 1007 should be equal
+ok 1008 returns 5 results - hard limit
+ok 1009 null
+# teardown
+# index place
+# index address
+# build queued features
+# Reverse ITP
+ok 1010 should be equal
+ok 1011 should be equal
+ok 1012 should be equal
+ok 1013 returns 3 results
+ok 1014 null
+# teardown
+# index region with bad language code
+ok 1015 should be truthy
+ok 1016 should be equal
+# index country
+# build queued features
+# russia => Russian Federation
+ok 1017 null
+ok 1018 should be equivalent
+ok 1019 should be equivalent
+ok 1020 should be equivalent
+# Rossiyskaya ==> Russian Federation (synonyms are not available in autoc)
+ok 1021 null
+ok 1022 should be equivalent
+ok 1023 should be equivalent
+ok 1024 should be equivalent
+ok 1025 matching_place_name contains synonym text
+# Российская => Russian Federation (autocomplete without language flag)
+ok 1026 null
+ok 1027 1 result
+ok 1028 should be equivalent
+ok 1029 Relevance penalty was applied for out-of-language match
+ok 1030 should be equivalent
+ok 1031 should be equivalent
+# Российская => Российская Федерация (autocomplete with language flag)
+ok 1032 null
+ok 1033 1 result
+ok 1034 should be equivalent
+ok 1035 should be equivalent
+ok 1036 No relevance penalty was applied for in-language match
+ok 1037 should be equivalent
+ok 1038 should be equivalent
+# Российская => Российская Федерация (autocomplete with multilanguage flag uses first)
+ok 1039 null
+ok 1040 1 result
+ok 1041 should be equivalent
+ok 1042 Relevance penalty was applied for out-of-language match
+ok 1043 should be equivalent
+ok 1044 should be equivalent
+# Российская Федерация => Russian Federation
+ok 1045 null
+ok 1046 should be equivalent
+ok 1047 should be equivalent
+ok 1048 should be equivalent
+# Elousi => Russian Federation
+ok 1049 null
+ok 1050 should be equivalent
+ok 1051 should be equivalent
+ok 1052 should be equivalent
+# beetlejuice => [fail]
+ok 1053 null
+ok 1054 should be falsy
+# fake blah blah => [fail]
+ok 1055 null
+ok 1056 should be falsy
+# index country
+# index country2
+# build queued features
+# czech => czech republic
+ok 1057 null
+ok 1058 should be equivalent
+ok 1059 should be equivalent
+# fake blah blah => [fail]
+ok 1060 null
+ok 1061 should be falsy
+# teardown
+# index country
+# index region
+# build queued features
+# kansas america
+ok 1062 null
+ok 1063 should be equal
+ok 1064 feature.matching_text
+ok 1065 should be equal
+# america
+ok 1066 null
+ok 1067 should be equal
+ok 1068 should be equal
+ok 1069 should be equal
+# jayhawks
+ok 1070 null
+ok 1071 should be equal
+ok 1072 should be equal
+ok 1073 should be equal
+# teardown
+# index province
+ok 1074 should be truthy
+# index place
+# build queued features
+# chicago (conf a)
+ok 1075 null
+ok 1076 should be equivalent
+ok 1077 should be equivalent
+# chicago (conf b)
+ok 1078 null
+ok 1079 should be equivalent
+ok 1080 should be equivalent
+# teardown
+# index country
+# index place
+# build queued features
+can't index text for index country because it has no lang code en
+can't index text for index country because it has no lang code es
+can't index text for index country because it has no lang code ja
+can't index text for index place because it has no lang code en
+can't index text for index place because it has no lang code es
+can't index text for index place because it has no lang code ja
+# paris ?language=en,es,bogus
+ok 1081 should be equal
+ok 1082 should be equal
+# paris ?language=en,es,ja
+ok 1083 null
+ok 1084 should be equal
+ok 1085 should be equal
+ok 1086 should be equal
+ok 1087 should be equal
+ok 1088 should be equal
+ok 1089 should be equal
+ok 1090 should be equal
+ok 1091 should be equal
+ok 1092 should be equal
+ok 1093 should be equal
+ok 1094 should be equal
+ok 1095 should be equal
+ok 1096 should be equal
+ok 1097 should be equivalent
+# error handling ?language=20+
+ok 1098 should be equal
+ok 1099 should be equal
+# error handling ?language=en,en
+ok 1100 should be equal
+ok 1101 should be equal
+# teardown
+# index country
+# build queued features
+# geocodes
+ok 1102 null
+ok 1103 should be equivalent
+ok 1104 should be equivalent
+# sets cache/dictcache
+ok 1105 sets source._geocoder on original instance
+ok 1106 sets source._dictcache on original instance
+ok 1107 clone cache === source cache
+ok 1108 clone dictcache === source dictcache
+ok 1109 a cache === b cache
+ok 1110 a dictcache === b dictcache
+# teardown
+# index region
+# index district
+# index district
+# index place
+# build queued features
+# multitype reverse
+# query:  0,0
+# result: capital
+# note:   shifted reverse
+ok 1111 null
+ok 1112 should be equivalent
+ok 1113 should be equivalent
+ok 1114 should be equivalent
+# multitype forward, q=capital
+# query:  capital
+# result: capital
+# note:   shifted forward
+ok 1115 null
+ok 1116 should be equivalent
+ok 1117 should be equivalent
+ok 1118 should be equivalent
+# teardown
+# index region
+# index poi
+# build queued features
+# multitype reverse
+# query:  0,0
+# result: cafe, caracas
+# note:   returns full context, no shifts
+ok 1119 null
+ok 1120 should be equivalent
+ok 1121 should be equivalent
+ok 1122 should be equivalent
+# multitype reverse, types=poi
+# query:  0,0
+# result: cafe, caracas
+# note:   returns full context, no shifts
+ok 1123 null
+ok 1124 should be equivalent
+ok 1125 should be equivalent
+ok 1126 should be equivalent
+# multitype reverse, types=place
+# query:  0,0
+# result: caracas
+# note:   returns caracas, shift
+ok 1127 null
+ok 1128 should be equivalent
+ok 1129 should be equivalent
+# multitype reverse, types=region
+# query:  0,0
+# result: caracas
+# note:   returns caracas, shift
+ok 1130 null
+ok 1131 should be equivalent
+ok 1132 should be equivalent
+# multitype reverse, types=place,region
+# query:  0,0
+# result: caracas
+# note:   returns caracas, shift
+ok 1133 null
+ok 1134 should be equivalent
+ok 1135 should be equivalent
+# teardown
+# index region
+# index place
+# index poi
+# build queued features
+# multitype reverse
+# query:  0,0
+# result: cafe, libertador, caracas
+# note:   returns full context, no shifts
+ok 1136 null
+ok 1137 should be equivalent
+ok 1138 should be equivalent
+ok 1139 should be equivalent
+# multitype reverse, types=poi
+# query:  0,0
+# result: cafe, libertador, caracas
+# note:   returns full context, no shifts
+ok 1140 null
+ok 1141 should be equivalent
+ok 1142 should be equivalent
+ok 1143 should be equivalent
+# multitype reverse, types=place
+# query:  0,0
+# result: liberatador, caracas
+# note:   returns libertador, caracas, no shift
+ok 1144 null
+ok 1145 should be equivalent
+ok 1146 should be equivalent
+# multitype reverse, types=region
+# query:  0,0
+# result: caracas
+# note:   returns caracas, no shift
+ok 1147 null
+ok 1148 should be equivalent
+ok 1149 should be equivalent
+# multitype reverse, types=place,region
+# query:  0,0
+# result: libertador, caracas
+# note:   returns libertador, caracas, no shift
+ok 1150 null
+ok 1151 should be equivalent
+ok 1152 should be equivalent
+# multitype forward, q=cafe
+# query:  cafe
+# result: cafe, libertador, caracas
+# note:   returns full context, no shifts
+ok 1153 null
+ok 1154 should be equivalent
+ok 1155 should be equivalent
+ok 1156 should be equivalent
+# multitype forward, q=libertador
+# query:  libertador
+# result: libertador, caracas
+# note:   returns full context, no shifts
+ok 1157 null
+ok 1158 should be equivalent
+ok 1159 should be equivalent
+ok 1160 should be equivalent
+# multitype forward, q=caracas
+# query:  caracas
+# result: caracas
+# note:   returns caracas with shift
+ok 1161 null
+ok 1162 should be equivalent
+ok 1163 should be equivalent
+# multitype forward, q=caracas, types=place
+# query:  caracas
+# result: caracas
+# note:   returns caracas with shift
+ok 1164 null
+ok 1165 should be equivalent
+ok 1166 should be equivalent
+# teardown
+# index country
+# index region
+# index postcode
+# index place
+# index neighborhood
+# index poi
+# build queued features
+# Descending Gappy
+ok 1167 null
+ok 1168 should be equivalent
+# teardown
+# index place_a
+# index place_b
+# build queued features
+# sadtown
+ok 1169 null
+ok 1170 should be equivalent
+ok 1171 should be equivalent
+# funtown
+ok 1172 null
+ok 1173 should be equivalent
+ok 1174 should be equivalent
+# teardown
+# index first place
+# index second place
+# abc - with autocomplete
+ok 1175 null
+ok 1176 abcde wins for abc with autocomplete
+ok 1177 should be equivalent
+# abc - no autocomplete
+ok 1178 null
+ok 1179 abc wins for abc without autocomplete
+ok 1180 should be equivalent
+# abcde - with autocomplete
+ok 1181 null
+ok 1182 abcde wins for abcde with autocomplete
+ok 1183 should be equivalent
+# abcde - no autocomplete
+ok 1184 null
+ok 1185 abcde wins for abcde without autocomplete
+ok 1186 should be equivalent
+# ab - with autocomplete
+ok 1187 null
+ok 1188 abcde wins for ab with autocomplete
+ok 1189 should be equivalent
+# ab - no autocomplete
+ok 1190 null
+ok 1191 ab matches nothing without autocomplete
+# index place
+# place - with autocomplete
+ok 1192 null
+ok 1193 place matches with autocomplete
+ok 1194 should be equivalent
+# place - no autocomplete
+ok 1195 null
+ok 1196 place matches nothing without autocomplete
+# one - with autocomplete
+ok 1197 null
+ok 1198 one matches nothing with autocomplete
+# one - no autocomplete
+ok 1199 null
+ok 1200 one matches nothing without autocomplete
+# place o - with autocomplete
+ok 1201 null
+ok 1202 abcde wins for abc with autocomplete
+ok 1203 should be equivalent
+# place o - no autocomplete
+ok 1204 null
+ok 1205 place o matches nothing without autocomplete
+# teardown
+# index address
+# build queued features
+# 100 17th
+ok 1206 null
+not ok 1207 should be equal
+  ---
+    operator: equal
+    expected: 1
+    actual:   0
+    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.numeric-address.test.js:43:11)
+  ...
+# 100 17t
+ok 1208 null
+not ok 1209 should be equal
+  ---
+    operator: equal
+    expected: 1
+    actual:   0
+    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.numeric-address.test.js:51:11)
+  ...
+# 100 17
+ok 1210 null
+not ok 1211 should be equal
+  ---
+    operator: equal
+    expected: 1
+    actual:   0
+    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.numeric-address.test.js:59:11)
+  ...
+# teardown
+# index
+# index
+# index address
+# build queued features
+# query
+ok 1212 null
+ok 1213 found 22209
+ok 1214 should be equal
+ok 1215 found 22209 restaurant
+ok 1216 should be equal
+# indexes degen
+ok 1217 null
+ok 1218 should be equal
+# does index degens for non-numeric terms
+ok 1219 null
+ok 1220 found 22209 restaurant
+# teardown
+# index country
+# index region
+# index place
+# index address
+# index poi
+# build queued features
+# Winston-Salem North Carolina
+ok 1221 null
+ok 1222 ok when query is ordered `{place} {region}`
+ok 1223 Expected ascending order doesn't lower relevance
+# North Carolina Winston-Salem
+ok 1224 null
+ok 1225 ok when query is ordered `{region} {place}`
+ok 1226 Unexpected descending order lowers relevance
+# Log Cabin Ln North Carolina Winston-Salem
+ok 1227 null
+ok 1228 ok when query order is mixed up
+ok 1229 Mixed-up order lowers relevance
+# No descending order POIs
+ok 1230 null
+ok 1231 feaatures matching in both directions are returned
+ok 1232 First result matches expected order
+# Descending Gappy
+ok 1233 null
+ok 1234 feaatures matching in both directions are returned
+ok 1235 First result matches expected order
+# teardown
+# index country
+# index region
+# index place
+# build queued features
+# find new york
+ok 1236 should be equal
+ok 1237 should be equal
+# find nueva york, language=es
+ok 1238 should be equal
+ok 1239 query has full relevance penalty applied because 'usa' has no es translation but es falls back
+# teardown
+# index country
+# index region
+# index place
+# build queued features
+# find makkah
+ok 1240 should be equal
+ok 1241 should be equal
+# teardown
+# index country
+# index region
+# index place
+# index poi
+# build queued features
+carmen:center did not fall within the provided geometry for 1 (usa). Calculating new point on surface.
+new: carmen:center:  [ -97.03125, 35.13134401970119 ]
+new: zxy:     [ '6/10/22',
+  '6/11/22',
+  '6/12/22',
+  '6/13/22',
+  '6/14/22',
+  '6/15/22',
+  '6/16/22',
+  '6/17/22',
+  '6/18/22',
+  '6/19/22',
+  '6/10/23',
+  '6/11/23',
+  '6/12/23',
+  '6/13/23',
+  '6/14/23',
+  '6/15/23',
+  '6/16/23',
+  '6/17/23',
+  '6/18/23',
+  '6/19/23',
+  '6/10/24',
+  '6/11/24',
+  '6/12/24',
+  '6/13/24',
+  '6/14/24',
+  '6/15/24',
+  '6/16/24',
+  '6/17/24',
+  '6/18/24',
+  '6/19/24',
+  '6/10/25',
+  '6/11/25',
+  '6/12/25',
+  '6/13/25',
+  '6/14/25',
+  '6/15/25',
+  '6/16/25',
+  '6/17/25',
+  '6/18/25',
+  '6/19/25',
+  '6/10/26',
+  '6/11/26',
+  '6/12/26',
+  '6/13/26',
+  '6/14/26',
+  '6/15/26',
+  '6/16/26',
+  '6/17/26',
+  '6/18/26',
+  '6/19/26',
+  '6/10/27',
+  '6/11/27',
+  '6/12/27',
+  '6/13/27',
+  '6/14/27',
+  '6/15/27',
+  '6/16/27',
+  '6/17/27',
+  '6/18/27',
+  '6/19/27',
+  '6/9/21',
+  '6/10/21',
+  '6/11/21',
+  '6/12/21',
+  '6/13/21',
+  '6/14/21',
+  '6/15/21',
+  '6/16/21',
+  '6/17/21',
+  '6/18/21',
+  '6/19/21',
+  '6/20/21',
+  '6/9/22',
+  '6/20/22',
+  '6/9/23',
+  '6/20/23',
+  '6/9/24',
+  '6/20/24',
+  '6/9/25',
+  '6/20/25',
+  '6/9/26',
+  '6/20/26',
+  '6/9/27',
+  '6/20/27',
+  '6/9/28',
+  '6/10/28',
+  '6/11/28',
+  '6/12/28',
+  '6/13/28',
+  '6/14/28',
+  '6/15/28',
+  '6/16/28',
+  '6/17/28',
+  '6/18/28',
+  '6/19/28',
+  '6/20/28' ]
+carmen:center did not fall within the provided geometry for 2 (new york,ny). Calculating new point on surface.
+new: carmen:center:  [ -76.300048828125, 42.768073361171545 ]
+new: zxy:     [ '6/18/23',
+  '6/17/22',
+  '6/18/22',
+  '6/19/22',
+  '6/17/23',
+  '6/19/23',
+  '6/17/24',
+  '6/18/24',
+  '6/19/24' ]
+carmen:center did not fall within the provided geometry for 3 (new york,nyc). Calculating new point on surface.
+new: carmen:center:  [ -73.96682739257812, 40.77453181778125 ]
+new: zxy:     [ '6/18/24' ]
+# let's find new york
+ok 1242 should be equal
+ok 1243 should be equal
+# ensure POI cannot win
+ok 1244 should be equal
+ok 1245 should be equal
+# teardown
+# index country
+# index region
+# index district
+# index place
+# build queued features
+carmen:center did not fall within the provided geometry for 10 (Thailand). Calculating new point on surface.
+new: carmen:center:  [ 100.51666259765625, 13.853480583774779 ]
+new: zxy:     [ '6/49/29' ]
+carmen:center did not fall within the provided geometry for 1 (Nonthaburi). Calculating new point on surface.
+new: carmen:center:  [ 100.51271438598633, 13.861246503074739 ]
+new: zxy:     [ '6/49/29' ]
+carmen:center did not fall within the provided geometry for 2 (Nonthaburi). Calculating new point on surface.
+new: carmen:center:  [ 100.51271438598633, 13.861246503074739 ]
+new: zxy:     [ '6/49/29' ]
+carmen:center did not fall within the provided geometry for 3 (Nonthaburi). Calculating new point on surface.
+new: carmen:center:  [ 100.51271438598633, 13.861246503074739 ]
+new: zxy:     [ '6/49/29' ]
+# nonthaburi
+ok 1246 lead feature is place
+# teardown
+# index country
+# index country
+# index region
+# index place
+# build queued features
+# find georgia
+ok 1247 should be equal
+ok 1248 should be equal
+# teardown
+# index place
+# query
+ok 1249 proximity boosts lower-scored place
+ok 1250 place.3 has a lower score than place.2
+ok 1251 place.3 is closer than place.2 to proximity point
+ok 1252 place.2 has a higher scoredist than place.3
+# teardown
+# index country
+# index country
+# index province
+# index province
+# index province
+# index province
+# build queued features
+# error: invalid options.proximity type
+ok 1253 should be equal
+ok 1254 should be equal
+# error: invalid options.proximity length
+ok 1255 should be equal
+ok 1256 should be equal
+# error: invalid options.proximity[0] type
+ok 1257 should be equal
+ok 1258 should be equal
+# error: invalid options.proximity[0] value
+ok 1259 should be equal
+ok 1260 should be equal
+# error: invalid options.proximity[1] type
+ok 1261 should be equal
+ok 1262 should be equal
+# error: invalid options.proximity[1] value
+ok 1263 should be equal
+ok 1264 should be equal
+# forward country - single layer - limit
+ok 1265 null
+ok 1266 found country
+ok 1267 found country.1
+ok 1268 should be equal
+# forward country - proximity - single layer - limit
+ok 1269 null
+ok 1270 found country
+ok 1271 found country.2
+ok 1272 should be equal
+# forward country - proximity - single layer - limit
+ok 1273 null
+ok 1274 found country
+ok 1275 found country.1
+ok 1276 should be equal
+# forward country - multi layer - limit
+ok 1277 null
+ok 1278 found province
+ok 1279 found country.3
+ok 1280 should be equal
+# forward country - single layer
+ok 1281 null
+ok 1282 found country
+ok 1283 found country.1
+ok 1284 should be equal
+# forward country - proximity - single layer
+ok 1285 null
+ok 1286 found country
+ok 1287 found country.2
+ok 1288 should be equal
+# forward country - proximity - single layer
+ok 1289 null
+ok 1290 found country
+ok 1291 found country.1
+ok 1292 should be equal
+# forward country - multi layer
+ok 1293 null
+ok 1294 found province
+ok 1295 found country.3
+ok 1296 should be equal
+# forward country - scoredist wins
+ok 1297 null
+ok 1298 found province
+ok 1299 found province.1
+ok 1300 should be equal
+# forward province - multilayer
+ok 1301 null
+ok 1302 found province
+ok 1303 found province.2
+ok 1304 should be equal
+# forward province - multilayer
+ok 1305 null
+ok 1306 found province
+ok 1307 found province.3
+ok 1308 should be equal
+# teardown
+# index region
+# index mx region
+# index us place
+# index ca place
+# index us address
+# build queued features
+# reverse - good stack, good type
+ok 1309 null
+ok 1310 should be equivalent
+# reverse - good stack, bad type, limit set
+ok 1311 null
+ok 1312 returns 0 results without error
+# reverse - bad stack, good type
+ok 1313 null
+ok 1314 returns 0 results without error
+# reverse - good stack, good type, limit set
+ok 1315 null
+ok 1316 1 feature returned
+ok 1317 should be equivalent
+# teardown
+# index country
+# index region
+# index postcode
+# index place
+# index address
+# build queued features
+# Check relevance scoring
+ok 1318 null
+ok 1319 Apt. number lowers relevance
+ok 1320 null
+ok 1321 High relevance with no apartment number
+# teardown
+# add POIs
+# add POIs
+# add POIs
+# add POIs
+# add address
+# invalid
+ok 1322 should be equivalent
+# reverse distance threshold - close enough
+# reverse distance threshold - too far
+# get the higher-scored, more distant feature first
+# teardown
+# index place
+# index ghost place
+# index zip+4
+# index zip
+# index ghost zip
+ok 1323 finds a feature when coords are off by .006
+ok 1324 does not find a feature when coords are off by .007
+ok 1325 higher-scored feature comes back first
+# fairfax
+ok 1326 null
+ok 1327 should be equivalent
+ok 1328 should be equivalent
+# mclean
+ok 1329 null
+ok 1330 should be equivalent
+ok 1331 should be equivalent
+# scored feature beats ghost
+ok 1332 null
+ok 1333 ghost feature deduped
+ok 1334 should be equivalent
+ok 1335 should be equivalent
+# exact match bests score
+ok 1336 null
+ok 1337 should be equivalent
+ok 1338 should be equivalent
+# index country
+# index province
+# index city
+# build queued features
+# china
+ok 1339 null
+ok 1340 should be equivalent
+ok 1341 should be equivalent
+# index country
+# index province
+# index city
+# build queued features
+# china
+ok 1342 null
+ok 1343 should be equivalent
+ok 1344 should be equivalent
+ok 1345 should be equivalent
+ok 1346 should be equivalent
+# china (dedupe)
+ok 1347 null
+ok 1348 should be equivalent
+ok 1349 should be equivalent
+# index country
+# query by id
+ok 1350 null
+ok 1351 relevance is 1
+ok 1352 should be equivalent
+# teardown
+# index address (signal 1)
+# index address (signal 2)
+# index address (noise)
+# build queued features
+# geocode proximity=10,10 => superscored
+ok 1353 null
+ok 1354 found address.200
+# geocode proximity=20,0 => nearest
+ok 1355 null
+ok 1356 found address.201
+# teardown
+# index small score (noise)
+# index big score (noise)
+# index big score (signal)
+# build queued features
+# query
+ok 1357 null
+ok 1358 should be equivalent
+ok 1359 should be equivalent
+# teardown
+# index region (high score)
+# index region (low score)
+# index region (medium score)
+# index place (high score)
+# index lamplace (high score)
+# index lamplace (medium score)
+# index namplace (high score)
+# index locality (low score)
+# build queued features
+# high score beats low score + high scorefactor
+ok 1360 null
+ok 1361 Place (high score) is first result
+ok 1362 Place (high score) is second result
+# teardown
+# index place
+# index matching address
+# index other address
+# build queued features
+# test spatialmatch relev
+ok 1363 null
+ok 1364 should be equal
+ok 1365 should be equal
+ok 1366 should be equal
+# teardown
+# index province
+# index city
+# index street
+# build queued features
+# windsor court (limit 2)
+ok 1367 null
+ok 1368 should be equivalent
+ok 1369 should be equivalent
+# windsor court windsor
+ok 1370 null
+ok 1371 should be equivalent
+ok 1372 should be equivalent
+ok 1373 should be equivalent
+# teardown
+# index country
+# index province
+# index place
+# build queued features
+# albany australia
+ok 1374 null
+ok 1375 should be equivalent
+ok 1376 should be equivalent
+# teardown
+# index country
+# index region
+# build queued features
+# trims text (forward)
+ok 1377 null
+ok 1378 should be equal
+ok 1379 should be equal
+ok 1380 should be equal
+# trims text (reverse)
+ok 1381 null
+ok 1382 should be equal
+ok 1383 should be equal
+ok 1384 should be equal
+# trims text (forward, ?language=en)
+ok 1385 null
+ok 1386 should be equal
+ok 1387 should be equal
+ok 1388 should be equal
+# trims text (reverse, ?language=en)
+ok 1389 null
+ok 1390 should be equal
+ok 1391 should be equal
+ok 1392 should be equal
+# trims text (forward, ?language=zh)
+ok 1393 null
+ok 1394 should be equal
+ok 1395 should be equal
+ok 1396 should be equal
+# trims text (reverse, ?language=en)
+ok 1397 null
+ok 1398 should be equal
+ok 1399 should be equal
+ok 1400 should be equal
+# teardown
+# index test
+# forward between tiles
+ok 1401 null
+ok 1402 found feature
+ok 1403 found feature
+ok 1404 should be equal
+# teardown
+# geocoder token test
+# test address index for relev
+ok 1405 null
+ok 1406 token replacement test, fake st
+# geocoder token test
+# test address index for relev
+ok 1407 null
+ok 1408 avenue du 18e
+# test address index for relev
+ok 1409 null
+ok 1410 avenue du dix-huitième régiment
+# geocoder token test
+# test token replacement
+ok 1411 null
+ok 1412 token regex numbered group test, qabc => qcba
+# set opts
+# geocoder token test
+# geocoder token test
+# unset opts
+# test address index for relev
+ok 1413 null
+ok 1414 global tokens removed
+ok 1415 should be equal
+# test address index for relev
+ok 1416 null
+ok 1417 global tokens removed
+ok 1418 should be equal
+# test address index autocomplete + tokens (full)
+ok 1419 null
+ok 1420 should be equal
+# test address index autocomplete + tokens (abbrev)
+ok 1421 null
+ok 1422 should be equal
+# test address index autocomplete + tokens (auto)
+ok 1423 null
+ok 1424 should be equal
+# set opts
+# geocoder token test
+# test token replacement
+ok 1425 null
+ok 1426 token replacement for str -> strasse
+# test token replacement
+ok 1427 null
+ok 1428 token replacement for str -> strasse
+# test token replacement
+ok 1429 null
+ok 1430 token replacement for str -> strasse
+# test token replacement
+ok 1431 null
+ok 1432 strasse token is not replaced when present in between a word
+# unset opts
+# teardown
+# index first region
+# index second region
+# build queued features
+# de
+ok 1433 null
+ok 1434 2 results
+ok 1435 found: Delaware
+ok 1436 should be equivalent
+ok 1437 found: South Carolina (in second place)
+ok 1438 should be equivalent
+ok 1439 South Carolina has a relevance penalty vs. Delaware
+# de (language: en)
+ok 1440 null
+ok 1441 2 results
+ok 1442 found: Delaware
+ok 1443 should be equivalent
+ok 1444 found: South Carolina (in second place)
+ok 1445 should be equivalent
+ok 1446 South Carolina has a relevance penalty vs. Delaware
+# de (language: hu)
+ok 1447 null
+ok 1448 2 results
+ok 1449 found: Dél-Karolina (South Carolina's Hungarian name)
+ok 1450 should be equivalent
+ok 1451 found: Delaware (in second place)
+ok 1452 should be equivalent
+ok 1453 Delaware has no relevance penalty vs. South Carolina/Dél-Karolina because Delaware is also called "Delaware" in Hungarian
+# de (language: hu-HU)
+ok 1454 null
+ok 1455 2 results
+ok 1456 found: Dél-Karolina (South Carolina's Hungarian name)
+ok 1457 should be equivalent
+ok 1458 found: Delaware (in second place)
+ok 1459 should be equivalent
+ok 1460 Delaware has no relevance penalty vs. South Carolina/Dél-Karolina because Delaware is also called "Delaware" in Hungarian
+# delaware
+ok 1461 null
+ok 1462 1 result
+ok 1463 found: Delaware
+ok 1464 should be equivalent
+# sou
+ok 1465 null
+ok 1466 1 result
+ok 1467 found: South Carolina
+ok 1468 should be equivalent
+# south carolina
+ok 1469 null
+ok 1470 1 result
+ok 1471 found: South Carolina
+ok 1472 should be equivalent
+# del karolina
+ok 1473 null
+ok 1474 1 result
+ok 1475 found: South Carolina
+ok 1476 should be equivalent
+# index first region
+# index second region
+# build queued features
+# reload cache
+# de
+ok 1477 null
+ok 1478 2 results
+ok 1479 found: Delaware
+ok 1480 should be equivalent
+ok 1481 found: South Carolina (in second place)
+ok 1482 should be equivalent
+ok 1483 South Carolina has a relevance penalty vs. Delaware
+# de (language: en)
+ok 1484 null
+ok 1485 2 results
+ok 1486 found: Delaware
+ok 1487 should be equivalent
+ok 1488 found: South Carolina (in second place)
+ok 1489 should be equivalent
+ok 1490 South Carolina has a relevance penalty vs. Delaware
+# de (language: hu)
+ok 1491 null
+ok 1492 2 results
+ok 1493 found: Dél-Karolina (South Carolina's Hungarian name)
+ok 1494 should be equivalent
+ok 1495 found: Delaware (in second place)
+ok 1496 should be equivalent
+ok 1497 Delaware has no relevance penalty vs. South Carolina/Dél-Karolina because Delaware is also called "Delaware" in Hungarian
+# de (language: hu-HU)
+ok 1498 null
+ok 1499 2 results
+ok 1500 found: Dél-Karolina (South Carolina's Hungarian name)
+ok 1501 should be equivalent
+ok 1502 found: Delaware (in second place)
+ok 1503 should be equivalent
+ok 1504 Delaware has no relevance penalty vs. South Carolina/Dél-Karolina because Delaware is also called "Delaware" in Hungarian
+# delaware
+ok 1505 null
+ok 1506 1 result
+ok 1507 found: Delaware
+ok 1508 should be equivalent
+# sou
+ok 1509 null
+ok 1510 1 result
+ok 1511 found: South Carolina
+ok 1512 should be equivalent
+# south carolina
+ok 1513 null
+ok 1514 1 result
+ok 1515 found: South Carolina
+ok 1516 should be equivalent
+# del karolina
+ok 1517 null
+ok 1518 1 result
+ok 1519 found: South Carolina
+ok 1520 should be equivalent
+# teardown
+# index country
+# index region
+# index place
+# index poi landmark
+# index poi
+# index offset poi
+# index second poi (nonlandmark)
+# index second poi (landmark)
+# index third poi (ambiguous landmark)
+# build queued features
+# china types: "asdf"
+ok 1521 should be equal
+ok 1522 should be equal
+# china types: []
+ok 1523 should be equal
+ok 1524 should be equal
+# china types: ["asdf"]
+ok 1525 should be equal
+ok 1526 should be equal
+# china types: ["poi.landmark"]
+ok 1527 null
+ok 1528 2 results
+ok 1529 landmarks beat pois
+# china types:[poi.landmark, poi]
+ok 1530 null
+ok 1531 4 results
+ok 1532 subtypes work
+# china poi returns poi.landmark also
+ok 1533 null
+ok 1534 4 results
+ok 1535 landmark ranks higher than poi.
+# china
+ok 1536 null
+ok 1537 4 results
+ok 1538 country wins
+# china
+ok 1539 null
+ok 1540 1 result
+ok 1541 place wins
+# china
+ok 1542 null
+ok 1543 2 results
+ok 1544 region #1
+ok 1545 place #2
+# reverse
+ok 1546 null
+ok 1547 4 results, 1 per layer type
+ok 1548 poi wins
+# reverse: country
+ok 1549 null
+ok 1550 1 result
+ok 1551 country wins
+# reverse: country,place
+ok 1552 null
+ok 1553 2 results
+ok 1554 1: place
+ok 1555 preserves full context of place result (including region)
+ok 1556 2: country
+ok 1557 should be equivalent
+# reverse: poi
+ok 1558 null
+ok 1559 1 results
+ok 1560 preserves full context of place result (including place, region, country)
+# reverse: poi.landmark
+ok 1561 null
+ok 1562 1 results
+ok 1563 landmark is top result
+ok 1564 preserves full context of place result (including place, region, country)
+# reverse returns offset point when its location is specified
+ok 1565 null
+ok 1566 4 results (limit=1 reverse query splits context into features)
+ok 1567 found offset point
+# reverse returns landmark point when offset queried w/ filter=poi.landmark
+ok 1568 null
+ok 1569 1 results (types filter suppresses split context features)
+ok 1570 found landmark
+# reverse returns offset point when offset location is specified, queried w/ filter=poi,poi.landmark
+ok 1571 null
+ok 1572 found offset point
+# reverse returns offset point when offset queried location is specified, w/ filter=poi.landmark,poi
+ok 1573 null
+ok 1574 found offset point
+# reverse: poi (limit 5, expect 3)
+ok 1575 null
+ok 1576 3 results
+ok 1577 preserves full context of place result (including place, region, country)
+ok 1578 preserves full context of place result (including place, region, country)
+ok 1579 returned different features
+# reverse: poi.landmark (limit 5, expect 1)
+ok 1580 null
+ok 1581 1 results
+ok 1582 landmark is top result
+ok 1583 preserves full context of place result (including place, region, country)
+# fwd: landmark filtering works w/ diff score ranges
+ok 1584 null
+ok 1585 2 results
+ok 1586 cn landmark in results
+ok 1587 au landmark in results
+# teardown
+# index Maréchal
+# Mal => Maréchal
+ok 1588 should be equivalent
+# Maréchal => Maréchal
+ok 1589 should be equivalent
+# Marechal => Maréchal
+ok 1590 should be equivalent
+# teardown
+# index 京都市
+# index москва
+# index josé
+# build queued features
+# 京 => 京都市
+ok 1591 should be equivalent
+# 京都市 => 京都市
+ok 1592 should be equivalent
+# jing !=> 京都市
+ok 1593 CJK transliteration disabled 1
+# jing du shi !=> 京都市
+ok 1594 CJK transliteration disabled 2
+# ji => no results
+ok 1595 should be equal
+# м => москва
+ok 1596 should be equivalent
+# москва => москва
+ok 1597 should be equivalent
+# m => москва
+ok 1598 m (no results)
+# moskva => москва
+ok 1599 moskva (no results)
+# j => josé
+ok 1600 should be equal
+# jose => josé
+ok 1601 should be equal
+# josé => josé
+ok 1602 should be equal
+# teardown
+# index Alberta
+# heading to Aruba, I hope you packed warm clothes
+ok 1603 null
+ok 1604 Alberta feature does not match 'Aruba'
+# JP query works
+ok 1605 null
+ok 1606 should be equivalent
+ok 1607 should be equivalent
+# Latin query works
+ok 1608 null
+ok 1609 should be equivalent
+ok 1610 should be equivalent
+# teardown
+# index abc xyz
+# check for collisions based on char prefixing
+ok 1611 null
+ok 1612 search for yz returned no results
+# check for collisions based on char prefixing
+ok 1613 null
+ok 1614 search for 'a yz' returned no results
+# teardown
+# index city
+# index Wall St
+# build queued features
+carmen:center did not fall within the provided geometry for 1 (New York). Calculating new point on surface.
+new: carmen:center:  [ -74.01047229766846, 40.70716509319156 ]
+new: zxy:     [ '6/18/24' ]
+carmen:center did not fall within the provided geometry for 1 (Wall St). Calculating new point on surface.
+new: carmen:center:  [ -74.01034355163574, 40.706912973264785 ]
+new: zxy:     [ '6/18/24' ]
+# query for "wall st new york"
+ok 1615 query for "wall st new york" returns "Wall St"
+# query for "wallst new york"
+ok 1616 query for "wallst new york" returns any feature
+ok 1617 query for "wallst new york" returns "Wall St"
+# index place
+# geocode against an all-zero-score index
+ok 1618 null
+ok 1619 1 result
+# teardown
+# grid
+ok 1620 throws on bad id
+ok 1621 throws on bad x
+ok 1622 throws on bad y
+ok 1623 throws on bad relev
+ok 1624 should be equal
+ok 1625 should be equivalent
+ok 1626 should be equal
+ok 1627 should be equivalent
+ok 1628 truncates score < 0
+ok 1629 truncates score > 7
+ok 1630 fuzz test x1000
+# setup a
+ok 1631 completed indexing a in 11084ms
+# setup b
+ok 1632 completed indexing b in 11109ms
+# merge a + b = c
+ok 1633 null
+ok 1634 merged freq in 247ms
+ok 1635 merged grid in 1402ms
+ok 1636 merged feature in 1524ms
+ok 1637 merged stat in 886ms
+# index - streaming interface
+# index docs.json
+ok 1638 null
+# ensure index was successful for index A
+ok 1639 error
+ok 1640 found India
+# can't find Turkmenistan, not in Index A
+ok 1641 error
+ok 1642 Can't find Turkmenistan
+# index docs.json
+ok 1643 null
+# ensure index was successful for index B
+ok 1644 error
+ok 1645 found Paraguay
+# can't find Nauru, not in index B
+ok 1646 error
+ok 1647 can't find Nauru
+# index docs.json
+ok 1648 null
+# merged indexes
+# ensure index was successful for index A after merging
+ok 1649 error
+ok 1650 found India
+# ensure index was successful for index B after merging
+ok 1651 error
+ok 1652 found Paraguay
+# ensure total indexes in C is greater than A and B
+ok 1653 ok
+# ensure geocode of a term that occurs in both indexes produces the same results
+ok 1654 error
+ok 1655 error
+ok 1656 geocoding "Republic" produces identical results in merged and complete index
+# ensure merged index features and original features are identical
+ok 1657 features are identical
+# ensure merged index freq and original freq are 98 percent similar
+ok 1658 freq matches > 97%: 100
+# ensure merged index grid and original grid are 98 percent similar
+ok 1659 grid matches > 97%: 98.81422924901186
+# index - streaming interface
+# open carmens
+ok 1660 null
+# index docs.json chunk A
+ok 1661 undefined
+# index docs.json chunk B1
+ok 1662 undefined
+# index docs.json chunk B2
+ok 1663 undefined
+# index docs.json in its entirety
+ok 1664 null
+# multi-way merged indexes
+# starting merge of /tmp/1499720626866_667.mbtiles and /tmp/1499720626866_358.mbtiles into /tmp/mrg.NNnrtFC8c/merge-0000.mbtiles
+# completed merge of /tmp/1499720626866_667.mbtiles and /tmp/1499720626866_358.mbtiles into /tmp/mrg.NNnrtFC8c/merge-0000.mbtiles
+# starting merge of /tmp/1499720626866_1475.mbtiles and /tmp/mrg.NNnrtFC8c/merge-0000.mbtiles into /tmp/1499720627244_8577.mbtiles
+# completed merge of /tmp/1499720626866_1475.mbtiles and /tmp/mrg.NNnrtFC8c/merge-0000.mbtiles into /tmp/1499720627244_8577.mbtiles
+Merge worker cleanup complete
+# ensure index was successful for index A after merging
+ok 1665 error
+ok 1666 found India
+# ensure index was successful for index B1 after merging
+ok 1667 error
+ok 1668 found Paraguay
+# ensure index was successful for index B2 after merging
+ok 1669 error
+ok 1670 found Palau
+# ensure geocode of a term that occurs in both indexes produces the same results
+ok 1671 error
+ok 1672 error
+ok 1673 geocoding "Republic" produces identical results in merged and complete index
+# clean up
+# index - streaming interface
+# index docs.json
+ok 1674 null
+# ensure index was successful
+ok 1675 null
+ok 1676 should be equivalent
+# index.generateStats
+ok 1677 should be equivalent
+ok 1678 should be equivalent
+# index.update -- error
+ok 1679 should be truthy
+# update 1
+ok 1680 null
+ok 1681 should be equivalent
+ok 1682 should be equivalent
+# update 2
+ok 1683 null
+ok 1684 should be equivalent
+ok 1685 should be equivalent
+# index.update freq
+ok 1686 should be truthy
+# error no id
+ok 1687 should be equal
+# error no carmen:center
+ok 1688 should be equal
+# indexes single doc
+ok 1689 null
+# indexes doc with geometry and no carmen:center
+carmen:center did not fall within the provided geometry for 1 (main st). Calculating new point on surface.
+new: carmen:center:  [ -75.598211, 38.367333 ]
+new: zxy:     [ '6/18/24' ]
+ok 1690 carmen:center has been set
+# indexes doc with geometry and carmen:center
+ok 1691 null
+# index
+# indexes a document
+ok 1692 null
+ok 1693 should be equal
+# analyzes index
+ok 1694 null
+ok 1695 should be equivalent
+# confirm that iterator works
+ok 1696 null
+ok 1697 shard iterator produces sorted output
+ok 1698 index has 0 shards
+# error -- zoom too high
+ok 1699 should be equal
+# error -- zoom too low
+ok 1700 should be equal
+# index phrase collection
+ok 1701 should be truthy
+ok 1702 null
+ok 1703 1 phrase
+ok 1704 grid has 2 zxy+feature ids
+# error -- _geometry too high resolution
+Polygons and MultiPolygons should follow the right-hand rule on id:1
+ok 1705 should be equal
+# index.cleanDocs
+ok 1706 with address: preserves geometry
+ok 1707 without address: removes geometry
+ok 1708 with carmen:addressnumber: preserves geometry
+# indexdocs.parseDocs (passthru)
+ok 1709 undefined
+ok 1710 should be equivalent
+# indexdocs.parseDocs (address MultiPoint)
+ok 1711 undefined
+ok 1712 should be equivalent
+# indexdocs.loadDoc
+ok 1713 no error
+ok 1714 2 patch.grid entries
+ok 1715 1 language in patch.grid[0]
+ok 1716 2 grids for language "all" in patch.grid[0]
+ok 1717 patch.grid[0][0]
+ok 1718 should be equivalent
+ok 1719 should be equivalent
+not ok 1720 should be equivalent
+  ---
+    operator: deepEqual
+    expected: [ 'main st', 'main' ]
+    actual:   [ 'mainst', 'main' ]
+    at: Test.tape (/Users/andreadelrio/carmen/test/indexdocs.test.js:57:7)
+  ...
+# indexdocs.standardize
+# indexdocs.standardize - carmen:center & carmen:zxy calculated
+carmen:center did not fall within the provided geometry for 1 (main street). Calculating new point on surface.
+new: carmen:center:  [ 0, 0 ]
+new: zxy:     [ '6/32/32' ]
+ok 1721 should be equivalent
+# indexdocs.standardize - Must be MultiPoint or GeometryCollection
+ok 1722 should throw
+# indexdocs.standardize - Must be MultiPoint or GeometryCollection
+ok 1723 should throw
+# indexdocs.standardize - carmen:addressnumber parallel arrays must equal
+ok 1724 should throw
+# indexdocs.standardize - carmen:addressnumber MultiPoint => GeometryCollection
+ok 1725 should be equivalent
+# indexdocs.standardize - carmen:addressnumber lowercased
+ok 1726 should be equivalent
+# indexdocs.standardize - carmen:rangetype invalid
+ok 1727 should throw
+# indexdocs.standardize - carmen:rangetype LineString => GeometryCollection
+ok 1728 should be equivalent
+# indexdocs.standardize - carmen:rangetype MultiLineString => GeometryCollection
+ok 1729 should be equivalent
+# indexdocs.standardize - carmen:zxy exceeds 10000 covers
+carmen:zxy exceeded 10000, truncating to 10000 (doc id: 1, text: main street)
+ok 1730 truncates carmen:zxy to 10000
+ok 1731 sort preserves covers closest to center: 6/32/32
+ok 1732 sort preserves covers closest to center: 6/33/33
+ok 1733 sort preserves covers closest to center: 6/31/31
+ok 1734 sort preserves covers closest to center: 6/32/30
+ok 1735 sort preserves covers closest to center: 6/30/32
+# indexdocs.verifyCenter
+ok 1736 center in tiles
+ok 1737 center outside tiles
+ok 1738 handle null lon
+ok 1739 handle null lat
+ok 1740 handle null lon,lat
+# indexdocs.runChecks
+ok 1741 should throw
+ok 1742 should throw
+ok 1743 should throw
+ok 1744 should be equal
+ok 1745 should throw
+ok 1746 should throw
+ok 1747 should throw
+ok 1748 should throw
+ok 1749 should be equal
+# indexdocs.generateFrequency
+ok 1750 should be equivalent
+ok 1751 should be equivalent
+# legacy version (pre-v1 => ok)
+ok 1752 null
+ok 1753 should be equal
+# legacy version (v1 => error)
+ok 1754 should be truthy
+ok 1755 should be equivalent
+# current version (v2 => error)
+ok 1756 should be truthy
+ok 1757 should be equivalent
+# current version (v3 => error)
+ok 1758 should be truthy
+ok 1759 should be equivalent
+# current version (v4 => error)
+ok 1760 should be truthy
+ok 1761 should be equivalent
+# current version (v5 => error)
+ok 1762 should be truthy
+ok 1763 should be equivalent
+# current version (v6 => error)
+ok 1764 should be truthy
+ok 1765 should be equivalent
+# current version (v6 => error)
+ok 1766 should be truthy
+ok 1767 should be equivalent
+# ops#toFeature
+ok 1768 should be equivalent
+ok 1769 should be equivalent
+ok 1770 Address number & name exist
+ok 1771 Address number missing
+ok 1772 Address name missing
+ok 1773 Address & Place
+ok 1774 Address & no Place
+ok 1775 No Address street & Place
+ok 1776 Just place
+ok 1777 Full stack
+ok 1778 Full stack
+ok 1779 short_code property made it into context array
+ok 1780 should be equivalent
+ok 1781 should be equivalent
+# ops#toFeature + no formatter + languageMode=strict
+ok 1782 should be equivalent
+ok 1783 should be equivalent
+ok 1784 should be equivalent
+ok 1785 should be equivalent
+# ops#toFeature + formatter + languageMode=strict
+ok 1786 should be equivalent
+ok 1787 should be equivalent
+ok 1788 should be equivalent
+ok 1789 should be equivalent
+# index country
+# index region
+# index place
+# build queued features
+# Toronto
+ok 1790 null
+ok 1791 should be equivalent
+# Toronto (dev mode)
+ok 1792 null
+ok 1793 should be equivalent
+# 0,0 (dev mode)
+ok 1794 null
+ok 1795 should be equivalent
+# teardown
+# permute.all
+ok 1796 should be equivalent
+ok 1797 should be equivalent
+ok 1798 should be equivalent
+ok 1799 should be equivalent
+ok 1800 should be equivalent
+ok 1801 should be equivalent
+ok 1802 should be equivalent
+ok 1803 should be equivalent
+ok 1804 should be equivalent
+ok 1805 should be equivalent
+ok 1806 should be equivalent
+ok 1807 should be equivalent
+ok 1808 should be equivalent
+ok 1809 should be equivalent
+# permute.continuous
+ok 1810 should be equivalent
+ok 1811 should be equivalent
+ok 1812 should be equivalent
+ok 1813 should be equivalent
+# scoredist
+# new york
+ok 1814 should be equivalent
+# chicago near san francisco
+ok 1815 should be equivalent
+# san near north sonoma county
+ok 1816 should be equivalent
+# santa cruz near sonoma county
+ok 1817 should be equivalent
+# washington near baltimore
+ok 1818 should be equivalent
+# gilmour ave near guelph, on, canada
+ok 1819 should be equivalent
+# cambridge near guelph, on, canada
+ok 1820 should be equivalent
+# zoom weighting
+ok 1821 zoom 6
+ok 1822 zoom 8
+ok 1823 zoom 10
+ok 1824 zoom 12
+ok 1825 zoom 14
+# proximity.center2zxy
+ok 1826 should be equivalent
+ok 1827 should be equivalent
+ok 1828 respects world extents
+ok 1829 respects world extents
+# proximity.distance
+ok 1830 should be equal
+ok 1831 should be equal
+ok 1832 should be equal
+# proximity.distscore
+ok 1833 20x score bump when 50 meters away
+ok 1834 2x score bump when 500 meters away
+# token replacement
+ok 1835 should be equivalent
+ok 1836 should be equivalent
+ok 1837 should be equivalent
+ok 1838 should be equivalent
+ok 1839 should be equivalent
+ok 1840 should be equivalent
+ok 1841 should be equivalent
+ok 1842 should be equivalent
+# custom reverse replacement
+ok 1843 should be equivalent
+ok 1844 should be equivalent
+ok 1845 should be equivalent
+ok 1846 should be equivalent
+# replacer
+ok 1847 should be equivalent
+ok 1848 should be equivalent
+ok 1849 should be equivalent
+ok 1850 should be equivalent
+ok 1851 should be equivalent
+ok 1852 should be equivalent
+# named/numbered group replacement
+ok 1853 should be equivalent
+ok 1854 should be equivalent
+ok 1855 should be equivalent
+ok 1856 should be equivalent
+# throw on mixed name/num replacement groups
+ok 1857 should throw
+# make sure word boundaries work right
+ok 1858 phrase-initial token
+ok 1859 phrase-medial token
+ok 1860 phrase-terminal token
+ok 1861 punctuation-separated token
+ok 1862 word-medial token (doesn't replace)
+ok 1863 word-terminal token preceded by accented character (doesn't replace)
+# rebalance, no garbage
+ok 1864 relev = 1
+ok 1865 weight = 0.25
+ok 1866 weight = 0.25
+ok 1867 weight = 0.25
+ok 1868 weight = 0.25
+# rebalance, with garbage
+ok 1869 relev = 0.75
+ok 1870 weight = 0.25
+ok 1871 weight = 0.25
+ok 1872 weight = 0.25
+# rebalance copies
+ok 1873 relev = 1
+ok 1874 weight = 0.25
+ok 1875 weight = 0.25
+ok 1876 weight = 0.25
+ok 1877 weight = 0.25
+ok 1878 relev = 0.50
+ok 1879 weight = 0.50
+# stackable simple
+ok 1880 should be equivalent
+# stackable nmask
+ok 1881 b1 and c1 do not stack (nmask: same geocoder_name)
+# stackable bmask
+ok 1882 a1 and b1 do not stack (bmask: exclusive bounds)
+# stackable complex
+ok 1883 should be equivalent
+# stackable direction change
+ok 1884 should be equivalent
+# stackable bench
+# bench x5 (indexCount=5, termCount=10)
+ok 1885 avg time 4ms
+# bench x5 (indexCount=6, termCount=10)
+ok 1886 avg time 11ms
+# bench x5 (indexCount=7, termCount=10)
+ok 1887 avg time 44ms
+# bench x5 (indexCount=8, termCount=10)
+ok 1888 avg time 318ms
+# bench x5 (indexCount=9, termCount=10)
+ok 1889 avg time 462ms
+# bench x5 (indexCount=10, termCount=10)
+ok 1890 avg time 2550ms
+# termops.encodableText
+ok 1891 encodes latin range
+ok 1892 encodes CJK range
+ok 1893 encodes an emoji to an actually empty string
+ok 1894 encodes an emoji phrase to an actually empty string
+# termops.encodePhrase clustering
+ok 1895 unique phrases apples,application,apply,appears,appomattox
+ok 1896 unique phrases bananas,bandana,banner,bandit,banter
+ok 1897 unique phrases cat,catacomb,cateract,catastrophe,cat nip
+# termops.encodePhrase
+ok 1898 main
+ok 1899 main (skip)
+ok 1900 main st
+ok 1901 main st (skip)
+ok 1902 main st (array)
+ok 1903 lazy dog
+ok 1904 lazy dog (skip)
+ok 1905 long phrase
+ok 1906 long phrase (skip)
+ok 1907 京都市
+ok 1908 京都市 (skip)
+ok 1909 jing du shi != 京都市
+# termops.encodePhrase collisions
+ok 1910 Collision rate 0.0000% < 0.0001%
+# termops.encodeTerm
+ok 1911 encodes term
+ok 1912 encodes numeric term
+ok 1913 encodes seminumeric term
+ok 1914 encodes seminumeric differently from numeric term
+ok 1915 encodes non-address numeric term with fnv1a
+# termops.encodeTerm collisions
+ok 1916 Collision rate 0.0000% < 0.0001%
+# termops.getHousenumRangeV3
+ok 1917 non-address doc => false
+ok 1918 empty carmen:addressnumber => false
+ok 1919 parses JSON carmen:addressnumber
+ok 1920 carmen:addressnumber => 0,10
+ok 1921 carmen:addressnumber => [0,10000000000]
+ok 1922 carmen:addressnumber => [1,13,3100,3101,3503]
+ok 1923 carmen:addressnumber => [1,13]
+ok 1924 carmen:addressnumber => [1,10]
+ok 1925 carmen:addressnumber (non-numeric) => false
+ok 1926 carmen:rangetype + carmen:lfromhn => [0,100]
+ok 1927 carmen:rangetype + carmen:lfromhn, carmen:ltohn => [10,100]
+ok 1928 carmen:rangetype + carmen:rfromhn => [0,100]
+ok 1929 carmen:rangetype + carmen:rfromhn => [0,100]
+ok 1930 complex case A
+ok 1931 complex case B
+# termops.getIndexablePhrases
+not ok 1932 should be equivalent
+  ---
+    operator: deepEqual
+    expected: |-
+      [ { phrase: 'main st', relev: 1, text: 'main st' }, { phrase: 'main', relev: 0.8, text: 'main' } ]
+    actual: |-
+      [ { phrase: 'mainst', relev: 1, text: 'mainst' }, { phrase: 'main', relev: 0.8, text: 'main' } ]
+    at: Test.test (/Users/andreadelrio/carmen/test/termops.getIndexablePhrases.test.js:14:7)
+  ...
+# termops.getIndexablePhrases (weight sieve)
+not ok 1933 should be equivalent
+  ---
+    operator: deepEqual
+    expected: |-
+      [ '1-1-jose de la casa', '1-1-jose de casa', '1-1-jose la casa', '0.8-1-jose casa' ]
+    actual: |-
+      [ '1-1-josedelacasa', '1-1-josedecasa', '1-1-joselacasa', '0.8-1-josecasa' ]
+    at: Test.test (/Users/andreadelrio/carmen/test/termops.getIndexablePhrases.test.js:43:7)
+  ...
+# termops.getIndexablePhrases (京都市)
+ok 1934 should be equivalent
+# termops.getIndexablePhrases (москва)
+ok 1935 should be equivalent
+# termops.getIndexablePhrases (josé)
+ok 1936 should be equivalent
+# termops.getIndexablePhrases (josé, no degens)
+ok 1937 should be equivalent
+# termops.getIndexableText
+ok 1938 creates indexableText
+ok 1939 creates contracted phrases using geocoder_tokens
+ok 1940 include variants
+ok 1941 include variants 2
+ok 1942 include variants 3
+ok 1943 exclude variants -- too many permutations
+ok 1944 don't expand st if it's ambiguous
+ok 1945 include st if there's a custom reverse function
+ok 1946 hypenated replacement
+ok 1947 with range
+ok 1948 in the presence of translations, plain carmen:text has language "default" and translations are language-specific
+ok 1949 in the presence of universal text, plain carmen:text and text_universal both have language "all"
+ok 1950 universal text is always indexed across langauges
+ok 1951 creates indexableText w/ synonyms
+ok 1952 translations with phrase overlaps are properly grouped
+# termops.getWeights
+ok 1953 weights terms
+ok 1954 weights sum to 1
+ok 1955 weights numTokens @ 0.2 and adjusts others
+ok 1956 weights sum to 1
+ok 1957 weights numTokens @ 0.2 and adjusts others
+ok 1958 weights sum to 1
+# id - tests if searching by id
+ok 1959 should be equivalent
+ok 1960 should be equivalent
+ok 1961 should be equivalent
+ok 1962 should be equivalent
+ok 1963 should be equivalent
+ok 1964 should be equal
+ok 1965 should be equal
+ok 1966 should be equal
+ok 1967 should be equal
+ok 1968 should be equal
+ok 1969 should be equal
+ok 1970 should be equal
+# termops.isAddressNumber
+ok 1971 12345
+ok 1972 12###
+ok 1973 #####
+ok 1974 12345 Main St
+ok 1975 12### Main St
+ok 1976 ##### Main St
+# encode
+ok 1977 should be equal
+ok 1978 should be equal
+ok 1979 should be equal
+ok 1980 should be equal
+ok 1981 should be equal
+ok 1982 should be equal
+ok 1983 should be equal
+ok 1984 should be equal
+ok 1985 should be equal
+ok 1986 should be equal
+ok 1987 should be equal
+ok 1988 should be equal
+ok 1989 should be equal
+# decode
+ok 1990 should be equal
+ok 1991 should be equal
+ok 1992 should be equal
+ok 1993 should be equal
+ok 1994 should be equal
+ok 1995 should be equal
+ok 1996 should be equal
+ok 1997 should be equal
+ok 1998 should be equal
+# maskAddress
+ok 1999 should be equivalent
+ok 2000 should be equivalent
+ok 2001 should be equivalent
+ok 2002 should be equivalent
+ok 2003 should be equivalent
+ok 2004 should be equivalent
+ok 2005 should be equivalent
+ok 2006 should be equivalent
+# numTokenV2
+ok 2007 no digits
+ok 2008 1 digit
+ok 2009 2 digit
+ok 2010 3 digit
+ok 2011 4 digit
+ok 2012 5 digit
+# numTokenV3
+ok 2013 no digits
+ok 2014 1 digit
+ok 2015 2 digit
+ok 2016 3 digit
+ok 2017 4 digit
+ok 2018 5 digit
+ok 2019 6 digit
+ok 2020 7 digit
+ok 2021 8 digit
+# numTokenize
+ok 2022 no numbers
+ok 2023 only numbers
+ok 2024 two numbers
+ok 2025 no numbers
+ok 2026 only numbers
+ok 2027 two numbers
+# termops.parseSemiNumber
+ok 2028 should be equal
+ok 2029 should be equal
+ok 2030 should be equal
+ok 2031 should be equal
+ok 2032 should be equal
+# termops.permutations
+ok 2033 should be equivalent
+ok 2034 should be equivalent
+ok 2035 should be equivalent
+ok 2036 should be equivalent
+ok 2037 should be equivalent
+ok 2038 should be equivalent
+ok 2039 should be equivalent
+# termops.permutations (props)
+ok 2040 should be equivalent
+ok 2041 should be equivalent
+ok 2042 should be equivalent
+ok 2043 should be equivalent
+ok 2044 should be equivalent
+ok 2045 should be equivalent
+ok 2046 should be equivalent
+ok 2047 should be equivalent
+ok 2048 should be equivalent
+ok 2049 should be equivalent
+ok 2050 should be equivalent
+ok 2051 should be equivalent
+ok 2052 should be equivalent
+ok 2053 should be equivalent
+ok 2054 should be equivalent
+ok 2055 should be equivalent
+ok 2056 should be equivalent
+ok 2057 should be equivalent
+ok 2058 should be equivalent
+ok 2059 should be equivalent
+ok 2060 should be equivalent
+ok 2061 should be equivalent
+ok 2062 should be equivalent
+ok 2063 should be equivalent
+# termops.permutations (props)
+ok 2064 should be equivalent
+ok 2065 should be equivalent
+ok 2066 should be equivalent
+ok 2067 should be equivalent
+ok 2068 should be equivalent
+ok 2069 should be equivalent
+ok 2070 should be equivalent
+ok 2071 should be equivalent
+ok 2072 should be equivalent
+ok 2073 should be equivalent
+ok 2074 should be equivalent
+ok 2075 should be equivalent
+ok 2076 should be equivalent
+# termops.permutations (props + all)
+ok 2077 should be equivalent
+ok 2078 should be equivalent
+ok 2079 should be equivalent
+ok 2080 should be equivalent
+ok 2081 should be equivalent
+ok 2082 should be equivalent
+ok 2083 should be equivalent
+ok 2084 should be equivalent
+ok 2085 should be equivalent
+ok 2086 should be equivalent
+ok 2087 should be equivalent
+ok 2088 should be equivalent
+ok 2089 should be equivalent
+ok 2090 should be equivalent
+ok 2091 should be equivalent
+ok 2092 should be equivalent
+ok 2093 should be equivalent
+# removeWhiteSpace
+ok 2094 result and removed spaces are the same
+ok 2095 removeWhiteSpace() removes whitespace
+# terms - tokenizes and hashes values
+ok 2096 should be equivalent
+# tokenizes basic strings
+ok 2097 should be equivalent
+ok 2098 should be equivalent
+ok 2099 splits on - (non-numeric)
+ok 2100 splits on +
+ok 2101 splits on _
+ok 2102 splits on :
+ok 2103 splits on ;
+ok 2104 splits on |
+ok 2105 splits on }
+ok 2106 splits on {
+ok 2107 splits on [
+ok 2108 splits on ]
+ok 2109 splits on (
+ok 2110 splits on )
+ok 2111 collapses .
+ok 2112 collapses apostraphe
+ok 2113 should be equivalent
+ok 2114 should be equivalent
+ok 2115 should be equivalent
+ok 2116 should be equivalent
+ok 2117 should be equivalent
+ok 2118 should be equivalent
+ok 2119 should be equivalent
+ok 2120 should be equivalent
+# tokenizes lonlat
+ok 2121 should be equivalent
+ok 2122 should be equivalent
+ok 2123 should be equivalent
+ok 2124 should be equivalent
+ok 2125 should be equivalent
+ok 2126 should be equivalent
+ok 2127 should be equivalent
+ok 2128 should be equivalent
+ok 2129 should be equivalent
+# edge cases - empty string
+ok 2130 should be equivalent
+# tokenize Japanese strings with numeric component
+ok 2131 dashed number at end
+ok 2132 dashed number in middle
+ok 2133 number in middle
+ok 2134 numbers in middle and at end
+ok 2135 does not split strings that begin with numbers
+# tokenize excludes un-unidecodable characters
+ok 2136 20 sobbies = 0 tokens
+ok 2137 intermediate emojis removed
+# termops.uniqPermutations
+ok 2138 a: 6 uniq permutations
+ok 2139 should be equivalent
+ok 2140 ab: 7 uniq permutations
+ok 2141 should be equivalent
+ok 2142 ## leading housenum
+ok 2143 2## leading housenum
+ok 2144 trailing housenum ##
+ok 2145 trailing housenum 2##
+ok 2146 landlocked housenum ##
+ok 2147 landlocked housenum 2##
+# test tokens
+ok 2148 okay, created a regex
+# test tokens
+ok 2149 okay, replaced the token
+# test global tokens - talstrasse
+# .uniq
+ok 2150 should be equivalent
+# verifymatch.sortFeature
+ok 2151 should be equivalent
+# verifymatch.sortContext (no distance)
+ok 2152 should be equivalent
+# verifymatch.sortContext (with distance)
+ok 2153 should be equivalent
+# verifymatch.sortContext (distance vs addresstype)
+ok 2154 should be equivalent
+# talstrasse
+ok 2155 okay, talstrasse
+# talstraße
+ok 2156 okay, talstraße
+# talstr
+ok 2157 okay, talstr
+
+1..2157
+# tests 2157
+# pass  2147
+# fail  10
+
