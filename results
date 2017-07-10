@@ -865,22 +865,10 @@ ok 499 should be equal
 # build queued features
 # test address
 ok 500 null
-not ok 501 should be equal
-  ---
-    operator: equal
-    expected: 'Brehmestraße 56'
-    actual:   undefined
-    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.early-degen.test.js:43:11)
-  ...
+ok 501 should be equal
 # test address
 ok 502 null
-not ok 503 should be equal
-  ---
-    operator: equal
-    expected: 'Brehmestraße 56'
-    actual:   undefined
-    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.early-degen.test.js:50:11)
-  ...
+ok 503 should be equal
 # teardown
 # rejects a heavy emoji query quickly
 ok 504 null
@@ -2066,31 +2054,13 @@ ok 1205 place o matches nothing without autocomplete
 # build queued features
 # 100 17th
 ok 1206 null
-not ok 1207 should be equal
-  ---
-    operator: equal
-    expected: 1
-    actual:   0
-    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.numeric-address.test.js:43:11)
-  ...
+ok 1207 should be equal
 # 100 17t
 ok 1208 null
-not ok 1209 should be equal
-  ---
-    operator: equal
-    expected: 1
-    actual:   0
-    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.numeric-address.test.js:51:11)
-  ...
+ok 1209 should be equal
 # 100 17
 ok 1210 null
-not ok 1211 should be equal
-  ---
-    operator: equal
-    expected: 1
-    actual:   0
-    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.numeric-address.test.js:59:11)
-  ...
+ok 1211 should be equal
 # teardown
 # index
 # index
@@ -2953,15 +2923,15 @@ ok 1628 truncates score < 0
 ok 1629 truncates score > 7
 ok 1630 fuzz test x1000
 # setup a
-ok 1631 completed indexing a in 11084ms
+ok 1631 completed indexing a in 10252ms
 # setup b
-ok 1632 completed indexing b in 11109ms
+ok 1632 completed indexing b in 10499ms
 # merge a + b = c
 ok 1633 null
-ok 1634 merged freq in 247ms
-ok 1635 merged grid in 1402ms
-ok 1636 merged feature in 1524ms
-ok 1637 merged stat in 886ms
+ok 1634 merged freq in 229ms
+ok 1635 merged grid in 1382ms
+ok 1636 merged feature in 1526ms
+ok 1637 merged stat in 954ms
 # index - streaming interface
 # index docs.json
 ok 1638 null
@@ -3012,10 +2982,10 @@ ok 1663 undefined
 # index docs.json in its entirety
 ok 1664 null
 # multi-way merged indexes
-# starting merge of /tmp/1499720626866_667.mbtiles and /tmp/1499720626866_358.mbtiles into /tmp/mrg.NNnrtFC8c/merge-0000.mbtiles
-# completed merge of /tmp/1499720626866_667.mbtiles and /tmp/1499720626866_358.mbtiles into /tmp/mrg.NNnrtFC8c/merge-0000.mbtiles
-# starting merge of /tmp/1499720626866_1475.mbtiles and /tmp/mrg.NNnrtFC8c/merge-0000.mbtiles into /tmp/1499720627244_8577.mbtiles
-# completed merge of /tmp/1499720626866_1475.mbtiles and /tmp/mrg.NNnrtFC8c/merge-0000.mbtiles into /tmp/1499720627244_8577.mbtiles
+# starting merge of /tmp/1499727413034_732.mbtiles and /tmp/1499727413034_7844.mbtiles into /tmp/mrg.0tSildSqZ/merge-0000.mbtiles
+# completed merge of /tmp/1499727413034_732.mbtiles and /tmp/1499727413034_7844.mbtiles into /tmp/mrg.0tSildSqZ/merge-0000.mbtiles
+# starting merge of /tmp/1499727413034_3665.mbtiles and /tmp/mrg.0tSildSqZ/merge-0000.mbtiles into /tmp/1499727413421_196.mbtiles
+# completed merge of /tmp/1499727413034_3665.mbtiles and /tmp/mrg.0tSildSqZ/merge-0000.mbtiles into /tmp/1499727413421_196.mbtiles
 Merge worker cleanup complete
 # ensure index was successful for index A after merging
 ok 1665 error
@@ -3346,15 +3316,15 @@ ok 1884 should be equivalent
 # bench x5 (indexCount=5, termCount=10)
 ok 1885 avg time 4ms
 # bench x5 (indexCount=6, termCount=10)
-ok 1886 avg time 11ms
+ok 1886 avg time 17ms
 # bench x5 (indexCount=7, termCount=10)
-ok 1887 avg time 44ms
+ok 1887 avg time 68ms
 # bench x5 (indexCount=8, termCount=10)
-ok 1888 avg time 318ms
+ok 1888 avg time 234ms
 # bench x5 (indexCount=9, termCount=10)
-ok 1889 avg time 462ms
+ok 1889 avg time 367ms
 # bench x5 (indexCount=10, termCount=10)
-ok 1890 avg time 2550ms
+ok 1890 avg time 1281ms
 # termops.encodableText
 ok 1891 encodes latin range
 ok 1892 encodes CJK range
@@ -3688,6 +3658,6 @@ ok 2157 okay, talstr
 
 1..2157
 # tests 2157
-# pass  2147
-# fail  10
+# pass  2152
+# fail  5
 
