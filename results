@@ -1289,15 +1289,7 @@ ok 729 null
 ok 730 should be equal
 ok 731 should be equal
 ok 732 language not set on default text
-not ok 733 synonym is included in matching_place_name
-  ---
-    operator: equal
-    expected: |-
-      'Severo-Zapadny federalny okrug, Russian Federation'
-    actual: |-
-      undefined
-    at: c.geocode (/Users/andreadelrio/carmen/test/geocode-unit.language-flag.test.js:141:15)
-  ...
+ok 733 synonym is included in matching_place_name
 # Rossiyskaya ==> Russian Federation
 ok 734 null
 ok 735 should be equal
@@ -2923,15 +2915,15 @@ ok 1628 truncates score < 0
 ok 1629 truncates score > 7
 ok 1630 fuzz test x1000
 # setup a
-ok 1631 completed indexing a in 10252ms
+ok 1631 completed indexing a in 10679ms
 # setup b
-ok 1632 completed indexing b in 10499ms
+ok 1632 completed indexing b in 11097ms
 # merge a + b = c
 ok 1633 null
-ok 1634 merged freq in 229ms
-ok 1635 merged grid in 1382ms
-ok 1636 merged feature in 1526ms
-ok 1637 merged stat in 954ms
+ok 1634 merged freq in 234ms
+ok 1635 merged grid in 1534ms
+ok 1636 merged feature in 1543ms
+ok 1637 merged stat in 915ms
 # index - streaming interface
 # index docs.json
 ok 1638 null
@@ -2982,10 +2974,10 @@ ok 1663 undefined
 # index docs.json in its entirety
 ok 1664 null
 # multi-way merged indexes
-# starting merge of /tmp/1499727413034_732.mbtiles and /tmp/1499727413034_7844.mbtiles into /tmp/mrg.0tSildSqZ/merge-0000.mbtiles
-# completed merge of /tmp/1499727413034_732.mbtiles and /tmp/1499727413034_7844.mbtiles into /tmp/mrg.0tSildSqZ/merge-0000.mbtiles
-# starting merge of /tmp/1499727413034_3665.mbtiles and /tmp/mrg.0tSildSqZ/merge-0000.mbtiles into /tmp/1499727413421_196.mbtiles
-# completed merge of /tmp/1499727413034_3665.mbtiles and /tmp/mrg.0tSildSqZ/merge-0000.mbtiles into /tmp/1499727413421_196.mbtiles
+# starting merge of /tmp/1499729136152_543.mbtiles and /tmp/1499729136152_955.mbtiles into /tmp/mrg.yvTl65doP/merge-0000.mbtiles
+# completed merge of /tmp/1499729136152_543.mbtiles and /tmp/1499729136152_955.mbtiles into /tmp/mrg.yvTl65doP/merge-0000.mbtiles
+# starting merge of /tmp/1499729136152_0364.mbtiles and /tmp/mrg.yvTl65doP/merge-0000.mbtiles into /tmp/1499729136533_67.mbtiles
+# completed merge of /tmp/1499729136152_0364.mbtiles and /tmp/mrg.yvTl65doP/merge-0000.mbtiles into /tmp/1499729136533_67.mbtiles
 Merge worker cleanup complete
 # ensure index was successful for index A after merging
 ok 1665 error
@@ -3314,17 +3306,17 @@ ok 1883 should be equivalent
 ok 1884 should be equivalent
 # stackable bench
 # bench x5 (indexCount=5, termCount=10)
-ok 1885 avg time 4ms
+ok 1885 avg time 5ms
 # bench x5 (indexCount=6, termCount=10)
-ok 1886 avg time 17ms
+ok 1886 avg time 19ms
 # bench x5 (indexCount=7, termCount=10)
-ok 1887 avg time 68ms
+ok 1887 avg time 49ms
 # bench x5 (indexCount=8, termCount=10)
-ok 1888 avg time 234ms
+ok 1888 avg time 112ms
 # bench x5 (indexCount=9, termCount=10)
-ok 1889 avg time 367ms
+ok 1889 avg time 461ms
 # bench x5 (indexCount=10, termCount=10)
-ok 1890 avg time 1281ms
+ok 1890 avg time 991ms
 # termops.encodableText
 ok 1891 encodes latin range
 ok 1892 encodes CJK range
@@ -3658,6 +3650,6 @@ ok 2157 okay, talstr
 
 1..2157
 # tests 2157
-# pass  2152
-# fail  5
+# pass  2153
+# fail  4
 

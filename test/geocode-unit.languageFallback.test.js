@@ -60,7 +60,7 @@ const addFeature = require('../lib/util/addfeature'),
             conf.country._geocoder.grid.list(),
             [
                 [ 'india', [ 0, 1 ] ],
-                [ 'united states', [ 0, 1, 2, 3 ] ],
+                [ 'unitedstates', [ 0, 1, 2, 3 ] ],
                 [ 'بھارت', [ 3 ] ],
                 [ 'هندوستان', [ 2 ] ]
             ],
