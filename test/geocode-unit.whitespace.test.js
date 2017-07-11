@@ -90,6 +90,26 @@ tape('query for "wallst new york"', (assert) => {
     });
 });
 
+tape('test index contents for newyork', (assert) => {
+    assert.equal(Array.from(conf.city._dictcache)[0], 'newyork', 'test index contents for newyork');
+    assert.end();
+});
+
+tape('test index contents for wallst', (assert) => {
+    assert.equal(Array.from(conf.street._dictcache)[0], 'wallst', 'test index contents for wallst');
+    assert.end();
+});
+
+tape('test index contents for grid/newyork', (assert) => {
+    assert.equal(Array.from(conf.city._geocoder.grid.list())[0][0], 'newyork', 'test index contents for newyork');
+    assert.end();
+});
+
+tape('test index contents for grid/wallst', (assert) => {
+    assert.equal(Array.from(conf.street._geocoder.grid.list())[0][0], 'wallst', 'test index contents for wallst');
+    assert.end();
+});
+
 //
 // tape('teardown', (t) => {
 //     context.getTile.cache.reset();
