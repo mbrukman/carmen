@@ -37,7 +37,7 @@ const addFeature = require('../lib/util/addfeature'),
     tape('test strasse address index for relev', (t) => {
         c.geocode('Alpenstraße 48', { limit_verify: 1 }, (err, res) => {
             t.ifError(err);
-            //t.equals(res.features[0].relevance, 0.99, 'token replacement test, Alpenstraße');
+            t.equals(res.features[0].relevance, 0.99, 'token replacement test, Alpenstraße');
             t.end();
         });
     });
