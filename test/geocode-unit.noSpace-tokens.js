@@ -15,7 +15,7 @@ const addFeature = require('../lib/util/addfeature'),
     };
 
     const opts = {
-        tokens: {"(.+)(strasse|str|straße)": " $1 str "}
+        tokens: {'(?:[\\s\\u2000-\\u206F\\u2E00-\\u2E7F\\\\\'!"#$%&()*+,\\-.\\/:;<=>?@\\[\\]^_`{|}~]|^)(.+)(strasse|str|straße)(?:[\\s\\u2000-\\u206F\\u2E00-\\u2E7F\\\\\'!"#$%&()*+,\\-.\\/:;<=>?@\\[\\]^_`{|}~]|$)': ' $1 str '}
     }
 
     const c = new Carmen(conf, opts);
