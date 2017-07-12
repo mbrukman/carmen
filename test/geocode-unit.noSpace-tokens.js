@@ -56,7 +56,7 @@ const addFeature = require('../lib/util/addfeature'),
         c.geocode('Alpenstraße 48', { limit_verify: 1 }, (err, res) => {
             console.log(' ');
             console.log('~~~testing...~~~');
-            console.log('results: ' + JSON.stringify(res));
+            console.log('results: ' , res);
             t.ifError(err);
             t.equals(res.features[0].relevance, 0.99, 'token replacement test, Alpenstraße');
             t.end();
