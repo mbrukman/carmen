@@ -1,57 +1,41 @@
 const tape = require('tape');
 const Carmen = require('..');
-const context = require('../lib/context');
+// const context = require('../lib/context');
 const mem = require('../lib/api-mem');
 const addFeature = require('../lib/util/addfeature'),
     queueFeature = addFeature.queueFeature,
     buildQueued = addFeature.buildQueued;
 
 (() => {
-	const conf = {
-		address: new mem({
-			maxzoom: 6,
-			geocoder_tokens: {"Strasse": "Str", "Straße": "Str"}
-		}, () => {})
-	};
+    const conf = {
+        address: new mem({
+            maxzoom: 6,
+            geocoder_tokens: {"Strasse": "Str", "Straße": "Str", "Street": "St"}
+        }, () => {})
+    };
 
     const opts = {
         tokens: {"(.+)(strasse|str|straße)": " $1 str "}
     }
 
-	const c = new Carmen(conf);
-	tape('geocoder token strasse test', (t) => {
-		let address = {
-			id:1,
-			properties: {
-				'carmen:text':'Alpenstraße',
-				'carmen:center':[0,0],
-				'carmen:addressnumber':['48']
-			},
-			geometry: {
-				type: 'MultiPoint',
-				coordinates: [[0,0]]
-			}
-		};
-	    queueFeature(conf.address, address, t.end);
-    });
-    tape('test strasse address index for relev', (t) => {
-        c.geocode('Alpenstraße 48', { limit_verify: 1 }, (err, res) => {
-            t.ifError(err);
-            t.equals(res.features[0].relevance, 0.99, 'token replacement test, Alpenstraße');
-            t.end();
-        });
-    });
-})();
+    const c = new Carmen(conf, opts);
 
+    tape('geocoder token strasse test', (t) => {
+        let address = {
+            id:1,
+            properties: {
+                'carmen:text':'Alpenstraße',
+                'carmen:center':[0,0],
+                'carmen:addressnumber':['48']
+            },
+            geometry: {
+                type: 'MultiPoint',
+                coordinates: [[0,0]]
+            }
+        };
+        queueFeature(conf.address, address, t.end);
+    });
 
-(() => {
-    const conf = {
-        address: new mem({
-            maxzoom: 6,
-            geocoder_tokens: {"Street": "St"}
-        }, () => {})
-    };
-    const c = new Carmen(conf);
     tape('geocoder token test', (t) => {
         let address = {
             id:1,
@@ -64,8 +48,21 @@ const addFeature = require('../lib/util/addfeature'),
                 coordinates: [0,0]
             }
         };
-        queueFeature(conf.address, address, () => { buildQueued(conf.address, t.end) });
+        queueFeature(conf.address, address,  () => { buildQueued(conf.address, t.end) });
     });
+
+
+    tape('test strasse address index for relev', (t) => {
+        c.geocode('Alpenstraße 48', { limit_verify: 1 }, (err, res) => {
+            console.log(' ');
+            console.log('~~~testing...~~~');
+            console.log('results: ' + JSON.stringify(res));
+            t.ifError(err);
+            t.equals(res.features[0].relevance, 0.99, 'token replacement test, Alpenstraße');
+            t.end();
+        });
+    });
+
     tape('test address index for relev', (t) => {
         c.geocode('main st', { limit_verify: 1 }, (err, res) => {
             t.ifError(err);
@@ -73,4 +70,5 @@ const addFeature = require('../lib/util/addfeature'),
             t.end();
         });
     });
+
 })();
