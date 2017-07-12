@@ -20,6 +20,11 @@ const addFeature = require('../lib/util/addfeature'),
 
     const c = new Carmen(conf, opts);
 
+    tape('set opts', (t) => {
+        addFeature.setOptions(opts);
+        t.end();
+    });
+
     tape('geocoder token strasse test', (t) => {
         let address = {
             id:1,
@@ -51,24 +56,23 @@ const addFeature = require('../lib/util/addfeature'),
         queueFeature(conf.address, address,  () => { buildQueued(conf.address, t.end) });
     });
 
-
-    tape('test strasse address index for relev', (t) => {
-        c.geocode('Alpenstraße 48', { limit_verify: 1 }, (err, res) => {
-            console.log(' ');
-            console.log('~~~testing...~~~');
-            console.log('results: ' , res);
-            t.ifError(err);
-            t.equals(res.features[0].relevance, 0.99, 'token replacement test, Alpenstraße');
-            t.end();
-        });
-    });
-
     tape('test address index for relev', (t) => {
         c.geocode('main st', { limit_verify: 1 }, (err, res) => {
+            console.log(' ');
+            console.log('~~~testing...~~~');
+            console.log('main st results', res);
             t.ifError(err);
             t.equals(res.features[0].relevance, 0.99, 'token replacement test, main st');
             t.end();
         });
     });
 
+    tape('test strasse address index for relev', (t) => {
+        c.geocode('Alpenstraße 48', { limit_verify: 1 }, (err, res) => {
+            console.log('alpenstraße results: ' , res);
+            t.ifError(err);
+            t.equals(res.features[0].relevance, 0.99, 'token replacement test, Alpenstraße');
+            t.end();
+        });
+    });
 })();
