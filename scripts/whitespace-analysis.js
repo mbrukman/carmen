@@ -6,7 +6,6 @@ const stream = require('stream');
 const termops = require('../lib/util/termops.js');
 
 // see ticket: https://github.com/mapbox/carmen/issues/632
-
 let total = 0;
 let hash = {};
 let result = 0;
@@ -27,7 +26,6 @@ const transmuteData = (line) => {
     }
     hash[resultLine].push(line);
 };
-
 
 // In order to retrieve results run
 // `cat filename | ./scripts/whitespace-analysis.js  > results2.json`
