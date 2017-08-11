@@ -1,6 +1,6 @@
 const tape = require('tape');
 const Carmen = require('..');
-const context = require('../lib/context');
+// const context = require('../lib/context');
 const mem = require('../lib/api-mem');
 const queue = require('d3-queue').queue;
 const addFeature = require('../lib/util/addfeature'),
@@ -12,7 +12,22 @@ const conf = {
     street: new mem({ maxzoom:6, geocoder_address:1 }, () => {})
 };
 const c = new Carmen(conf);
-
+// tape('index Eiffel Tower', (t) => {
+//     let landmark = {
+//         "id":1,
+//         "properties": {
+//             'carmen:text':'Eiffel Tower'
+//         },
+//         "geometry": {
+//           "type": "Point",
+//           "coordinates": [
+//             -74.01034355163574,
+//             40.706912973264785
+//           ]
+//         }
+//     };
+//     queueFeature(conf.landmark, landmark, t.end);
+// });
 tape('index city', (t) => {
     let city = {
         "id":1,
@@ -20,31 +35,31 @@ tape('index city', (t) => {
             'carmen:text':'New York'
         },
         "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                -74.0105152130127,
-                40.70792146442606
-              ],
-              [
-                -74.01156663894653,
-                40.707043102014715
-              ],
-              [
-                -74.0103006362915,
-                40.70640872195707
-              ],
-              [
-                -74.00937795639038,
-                40.70714069841032
-              ],
-              [
-                -74.0105152130127,
-                40.70792146442606
-              ]
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -74.0105152130127,
+                        40.70792146442606
+                    ],
+                    [
+                        -74.01156663894653,
+                        40.707043102014715
+                    ],
+                    [
+                        -74.0103006362915,
+                        40.70640872195707
+                    ],
+                    [
+                        -74.00937795639038,
+                        40.70714069841032
+                    ],
+                    [
+                        -74.0105152130127,
+                        40.70792146442606
+                    ]
+                ]
             ]
-          ]
         }
     };
     queueFeature(conf.city, city, t.end);
@@ -56,15 +71,16 @@ tape('index Wall St', (t) => {
             'carmen:text':'Wall St'
         },
         "geometry": {
-          "type": "Point",
-          "coordinates": [
-            -74.01034355163574,
-            40.706912973264785
-          ]
+            "type": "Point",
+            "coordinates": [
+                -74.01034355163574,
+                40.706912973264785
+            ]
         }
     };
     queueFeature(conf.street, street, t.end);
 });
+
 tape('build queued features', (t) => {
     const q = queue();
     Object.keys(conf).forEach((c) => {

@@ -1,6 +1,4 @@
 const tape = require('tape');
-const readline = require('readline');
-const fs = require('fs');
 const termops = require('../lib/util/termops');
 
 tape('removeWhiteSpace', (assert) => {
