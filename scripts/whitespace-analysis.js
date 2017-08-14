@@ -42,6 +42,4 @@ process.stdin
           }
       });
       result = sameAmt/total;
-      // console.log(result);
-      // console.log(JSON.stringify(array, null, 2));
   });
