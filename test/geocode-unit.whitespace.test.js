@@ -16,25 +16,29 @@ const conf = {
         maxzoom: 6,
         geocoder_address: 1,
         collapseWhiteSpace: true
+    }, () => {}),
+    landmark: new mem({
+        maxzoom: 6,
+        collapseWhiteSpace: false
     }, () => {})
 };
 const c = new Carmen(conf);
-// tape('index Eiffel Tower', (t) => {
-//     let landmark = {
-//         "id":1,
-//         "properties": {
-//             'carmen:text':'Eiffel Tower'
-//         },
-//         "geometry": {
-//           "type": "Point",
-//           "coordinates": [
-//             -74.01034355163574,
-//             40.706912973264785
-//           ]
-//         }
-//     };
-//     queueFeature(conf.landmark, landmark, t.end);
-// });
+tape('index Eiffel Tower', (t) => {
+    let landmark = {
+        "id":1,
+        "properties": {
+            'carmen:text':'Eiffel Tower'
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -74.01034355163574,
+                40.706912973264785
+            ]
+        }
+    };
+    queueFeature(conf.landmark, landmark, t.end);
+});
 tape('index city', (t) => {
     let city = {
         "id":1,
@@ -132,6 +136,8 @@ tape('test index contents for grid/wallst', (assert) => {
     assert.equal(Array.from(conf.street._geocoder.grid.list())[0][0], 'wallst', 'test index contents for wallst');
     assert.end();
 });
+
+//TODO: add language flag test to trigger WhiteSpace during getMatchingText();
 
 //
 // tape('teardown', (t) => {
