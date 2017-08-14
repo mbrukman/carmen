@@ -112,7 +112,8 @@ function Geocoder(indexes, options) {
             source.geocoder_inherit_score = info.geocoder_inherit_score || false;
             source.geocoder_universal_text = info.geocoder_universal_text || false;
             source.geocoder_reverse_mode = info.geocoder_reverse_mode || false;
-            source.collapseWhiteSpace = (source.geocoder_address === 1) ? true : false;
+            source.collapseWhiteSpace = info.collapseWhiteSpace || false;
+            console.log(source.collapseWhiteSpace);
             source.token_replacer = token.createReplacer(info.geocoder_tokens||{});
             source.indexing_replacer = token.createReplacer(info.geocoder_tokens||{}, {includeUnambiguous: true, custom: source.geocoder_inverse_tokens||{}});
 

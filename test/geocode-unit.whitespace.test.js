@@ -8,8 +8,15 @@ const addFeature = require('../lib/util/addfeature'),
     buildQueued = addFeature.buildQueued;
 
 const conf = {
-    city: new mem(null, () => {}),
-    street: new mem({ maxzoom:6, geocoder_address:1 }, () => {})
+    city: new mem({
+        maxzoom: 6,
+        collapseWhiteSpace: true
+    }, () => {}),
+    street: new mem({
+        maxzoom: 6,
+        geocoder_address: 1,
+        collapseWhiteSpace: true
+    }, () => {})
 };
 const c = new Carmen(conf);
 // tape('index Eiffel Tower', (t) => {
