@@ -10,24 +10,28 @@ const addFeature = require('../lib/util/addfeature'),
 const conf = {
     city: new mem({
         maxzoom: 6,
+        geocoder_languages: ['ur', 'en', 'fa'],
         collapseWhiteSpace: true
     }, () => {}),
     street: new mem({
         maxzoom: 6,
         geocoder_address: 1,
+        geocoder_languages: ['ur', 'en', 'fa'],
         collapseWhiteSpace: true
     }, () => {}),
     landmark: new mem({
         maxzoom: 6,
+        geocoder_address: 0,
+        geocoder_languages: ['ur', 'en', 'fa'],
         collapseWhiteSpace: false
     }, () => {})
 };
 const c = new Carmen(conf);
-tape('index Eiffel Tower', (t) => {
-    let landmark = {
+tape('index Wall St', (t) => {
+    let street = {
         "id":1,
         "properties": {
-            'carmen:text':'Eiffel Tower'
+            'carmen:text':'Wall St'
         },
         "geometry": {
             "type": "Point",
@@ -37,13 +41,14 @@ tape('index Eiffel Tower', (t) => {
             ]
         }
     };
-    queueFeature(conf.landmark, landmark, t.end);
+    queueFeature(conf.street, street, t.end);
 });
 tape('index city', (t) => {
     let city = {
         "id":1,
         "properties": {
-            'carmen:text':'New York'
+            'carmen:text':'New York',
+            'carmen:text_en': 'New York'
         },
         "geometry": {
             "type": "Polygon",
@@ -75,11 +80,11 @@ tape('index city', (t) => {
     };
     queueFeature(conf.city, city, t.end);
 });
-tape('index Wall St', (t) => {
-    let street = {
+tape('index Eiffel Tower', (t) => {
+    let landmark = {
         "id":1,
         "properties": {
-            'carmen:text':'Wall St'
+            'carmen:text':'Eiffel Tower'
         },
         "geometry": {
             "type": "Point",
@@ -89,9 +94,8 @@ tape('index Wall St', (t) => {
             ]
         }
     };
-    queueFeature(conf.street, street, t.end);
+    queueFeature(conf.landmark, landmark, t.end);
 });
-
 tape('build queued features', (t) => {
     const q = queue();
     Object.keys(conf).forEach((c) => {
@@ -136,11 +140,13 @@ tape('test index contents for grid/wallst', (assert) => {
     assert.equal(Array.from(conf.street._geocoder.grid.list())[0][0], 'wallst', 'test index contents for wallst');
     assert.end();
 });
+// TODO: add eiffel tower search with geocoder_address = 0
+tape('query for "eiffel tower paris"', (assert) => {
+    c.geocode('eiffel tower paris', { limit_verify:1 }, (err, res) => {
+        assert.deepEqual(res.features[0].place_name, 'Eiffel Tower Paris', 'query for "eiffel tower paris" returns "Eiffel Tower"');
+        assert.end();
+    });
+});
 
 //TODO: add language flag test to trigger WhiteSpace during getMatchingText();
-
-//
-// tape('teardown', (t) => {
-//     context.getTile.cache.reset();
-//     t.end();
-// });
+// TODO: add language flag test
