@@ -24,6 +24,12 @@ const conf = {
         geocoder_address: 0,
         geocoder_languages: ['ur', 'en', 'fa'],
         collapseWhiteSpace: false
+    }, () => {}),
+    country: new mem({
+        maxzoom: 6,
+        geocoder_address: 0,
+        geocoder_languages: ['ur', 'en', 'fa'],
+        collapseWhiteSpace: false
     }, () => {})
 };
 const c = new Carmen(conf);
@@ -31,7 +37,8 @@ tape('index Wall St', (t) => {
     let street = {
         "id":1,
         "properties": {
-            'carmen:text':'Wall St'
+            'carmen:text':'Wall St',
+            'carmen:text_en':'Wall St'
         },
         "geometry": {
             "type": "Point",
@@ -80,22 +87,61 @@ tape('index city', (t) => {
     };
     queueFeature(conf.city, city, t.end);
 });
-tape('index Eiffel Tower', (t) => {
+tape('index Christ the Redeemer', (t) => {
     let landmark = {
         "id":1,
         "properties": {
-            'carmen:text':'Eiffel Tower'
+            'carmen:text':'Christ the Redeemer',
+            'carmen:text_en':'Christ the Redeemer'
         },
         "geometry": {
             "type": "Point",
             "coordinates": [
-                -74.01034355163574,
-                40.706912973264785
+                -50.80078125,
+                -10.444597722834875
+
             ]
         }
     };
     queueFeature(conf.landmark, landmark, t.end);
 });
+// tape('index Brazil', (t) => {
+//     let country = {
+//         "id":1,
+//         "properties": {
+//             'carmen:text':'Brazil',
+//             'carmen:text_en':'Brazil'
+//         },
+//         "geometry": {
+//             "type": "Point",
+//             "coordinates": [
+//                 [
+//                     [
+//                         -55.54687499999999,
+//                         -14.647368383896618
+//                     ],
+//                     [
+//                         -44.384765625,
+//                         -14.647368383896618
+//                     ],
+//                     [
+//                         -44.384765625,
+//                         -6.315298538330033
+//                     ],
+//                     [
+//                         -55.54687499999999,
+//                         -6.315298538330033
+//                     ],
+//                     [
+//                         -55.54687499999999,
+//                         -14.647368383896618
+//                     ]
+//                 ]
+//             ]
+//         }
+//     };
+//     queueFeature(conf.country, country, t.end);
+// });
 tape('build queued features', (t) => {
     const q = queue();
     Object.keys(conf).forEach((c) => {
@@ -108,6 +154,8 @@ tape('build queued features', (t) => {
 
 tape('query for "wall st new york"', (assert) => {
     c.geocode('wall st new york', { limit_verify:1 }, (err, res) => {
+        console.log(res);
+        console.log(err);
         assert.deepEqual(res.features[0].place_name, 'Wall St, New York', 'query for "wall st new york" returns "Wall St"');
         assert.end();
     });
@@ -140,13 +188,12 @@ tape('test index contents for grid/wallst', (assert) => {
     assert.equal(Array.from(conf.street._geocoder.grid.list())[0][0], 'wallst', 'test index contents for wallst');
     assert.end();
 });
-// TODO: add eiffel tower search with geocoder_address = 0
-tape('query for "eiffel tower paris"', (assert) => {
-    c.geocode('eiffel tower paris', { limit_verify:1 }, (err, res) => {
-        assert.deepEqual(res.features[0].place_name, 'Eiffel Tower Paris', 'query for "eiffel tower paris" returns "Eiffel Tower"');
+// TODO: add landmark search with geocoder_address = 0
+tape('query for "christ the redeemer, brazil"', (assert) => {
+    c.geocode('christ the redeemer brazil', { limit_verify:1 }, (err, res) => {
+        assert.deepEqual(res.features[0].place_name, 'Christ the Redeemer, Brazil', 'query for "christ the redeemer brazil" returns "Christ the Redeemer, Brazil"');
         assert.end();
     });
 });
 
 //TODO: add language flag test to trigger WhiteSpace during getMatchingText();
-// TODO: add language flag test
