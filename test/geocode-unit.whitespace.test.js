@@ -11,24 +11,24 @@ const conf = {
     country: new mem({
         maxzoom: 6,
         geocoder_address: 0,
-        geocoder_languages: ['ur', 'en', 'fa'],
+        geocoder_languages: ['en'],
         collapseWhiteSpace: false
     }, () => {}),
     city: new mem({
         maxzoom: 6,
-        geocoder_languages: ['ur', 'en', 'fa'],
+        geocoder_languages: ['en'],
         collapseWhiteSpace: true
     }, () => {}),
     street: new mem({
         maxzoom: 6,
         geocoder_address: 1,
-        geocoder_languages: ['ur', 'en', 'fa'],
+        geocoder_languages: ['en'],
         collapseWhiteSpace: true
     }, () => {}),
     landmark: new mem({
         maxzoom: 6,
         geocoder_address: 1,
-        geocoder_languages: ['ur', 'en', 'fa'],
+        geocoder_languages: ['en'],
         collapseWhiteSpace: false
     }, () => {}),
 };
@@ -38,7 +38,8 @@ tape('index Wall St', (t) => {
         "id":1,
         "properties": {
             'carmen:text':'Wall St',
-            'carmen:text_en':'Wall St'
+            'carmen:text_en':'Wall St',
+            "carmen:center":  [ -74.01034355163574, 40.706912973264785 ]
         },
         "geometry": {
             "type": "Point",
@@ -55,7 +56,8 @@ tape('index city', (t) => {
         "id":1,
         "properties": {
             'carmen:text':'New York',
-            'carmen:text_en': 'New York'
+            'carmen:text_en': 'New York',
+            "carmen:center":  [ -74.01047229766846, 40.70716509319156 ]
         },
         "geometry": {
             "type": "Polygon",
@@ -92,7 +94,8 @@ tape('index Christ the Redeemer', (t) => {
         "id":1,
         "properties": {
             'carmen:text':'Christ the Redeemer',
-            'carmen:text_en':'Christ the Redeemer'
+            'carmen:text_en':'Christ the Redeemer',
+            "carmen:center":  [ -50.80078125, -10.444597722834875 ]
         },
         "geometry": {
             "type": "Point",
@@ -110,7 +113,8 @@ tape('index Brazil', (t) => {
         "id":1,
         "properties": {
             'carmen:text':'Brazil',
-            'carmen:text_en':'Brazil'
+            'carmen:text_en':'Brazil',
+            "carmen:center":  [ -49.9658203125, -10.481333461113326 ]
         },
         "geometry": {
             "type": "Polygon",
@@ -154,8 +158,6 @@ tape('build queued features', (t) => {
 
 tape('query for "wall st new york"', (assert) => {
     c.geocode('wall st new york', { limit_verify:1 }, (err, res) => {
-        console.log(res);
-        console.log(err);
         assert.deepEqual(res.features[0].place_name, 'Wall St, New York', 'query for "wall st new york" returns "Wall St"');
         assert.end();
     });
@@ -188,12 +190,19 @@ tape('test index contents for grid/wallst', (assert) => {
     assert.equal(Array.from(conf.street._geocoder.grid.list())[0][0], 'wallst', 'test index contents for wallst');
     assert.end();
 });
-// TODO: add landmark search with geocoder_address = 0
+//landmark search with geocoder_address = 0
 tape('query for "christ the redeemer, brazil"', (assert) => {
     c.geocode('christ the redeemer brazil', { limit_verify:1 }, (err, res) => {
         assert.deepEqual(res.features[0].place_name, 'Christ the Redeemer, Brazil', 'query for "christ the redeemer brazil" returns "Christ the Redeemer, Brazil"');
         assert.end();
     });
 });
-
-//TODO: add language flag test to trigger WhiteSpace during getMatchingText();
+//language flag test to trigger WhiteSpace during getMatchingText();
+tape('query: Wall St', (t) => {
+    c.geocode('Wall St', { language: 'ar'}, (err, res) => {
+        t.equal('Wall St', res.features[0].text, 'Fallback to English');
+        t.equal('en', res.features[0].language, 'Language returned is English');
+        t.ifError(err);
+        t.end();
+    });
+});
