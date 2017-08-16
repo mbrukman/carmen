@@ -8,6 +8,12 @@ const addFeature = require('../lib/util/addfeature'),
     buildQueued = addFeature.buildQueued;
 
 const conf = {
+    country: new mem({
+        maxzoom: 6,
+        geocoder_address: 0,
+        geocoder_languages: ['ur', 'en', 'fa'],
+        collapseWhiteSpace: false
+    }, () => {}),
     city: new mem({
         maxzoom: 6,
         geocoder_languages: ['ur', 'en', 'fa'],
@@ -21,16 +27,10 @@ const conf = {
     }, () => {}),
     landmark: new mem({
         maxzoom: 6,
-        geocoder_address: 0,
+        geocoder_address: 1,
         geocoder_languages: ['ur', 'en', 'fa'],
         collapseWhiteSpace: false
     }, () => {}),
-    country: new mem({
-        maxzoom: 6,
-        geocoder_address: 0,
-        geocoder_languages: ['ur', 'en', 'fa'],
-        collapseWhiteSpace: false
-    }, () => {})
 };
 const c = new Carmen(conf);
 tape('index Wall St', (t) => {
@@ -105,43 +105,43 @@ tape('index Christ the Redeemer', (t) => {
     };
     queueFeature(conf.landmark, landmark, t.end);
 });
-// tape('index Brazil', (t) => {
-//     let country = {
-//         "id":1,
-//         "properties": {
-//             'carmen:text':'Brazil',
-//             'carmen:text_en':'Brazil'
-//         },
-//         "geometry": {
-//             "type": "Point",
-//             "coordinates": [
-//                 [
-//                     [
-//                         -55.54687499999999,
-//                         -14.647368383896618
-//                     ],
-//                     [
-//                         -44.384765625,
-//                         -14.647368383896618
-//                     ],
-//                     [
-//                         -44.384765625,
-//                         -6.315298538330033
-//                     ],
-//                     [
-//                         -55.54687499999999,
-//                         -6.315298538330033
-//                     ],
-//                     [
-//                         -55.54687499999999,
-//                         -14.647368383896618
-//                     ]
-//                 ]
-//             ]
-//         }
-//     };
-//     queueFeature(conf.country, country, t.end);
-// });
+tape('index Brazil', (t) => {
+    let country = {
+        "id":1,
+        "properties": {
+            'carmen:text':'Brazil',
+            'carmen:text_en':'Brazil'
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -55.54687499999999,
+                        -14.647368383896618
+                    ],
+                    [
+                        -44.384765625,
+                        -14.647368383896618
+                    ],
+                    [
+                        -44.384765625,
+                        -6.315298538330033
+                    ],
+                    [
+                        -55.54687499999999,
+                        -6.315298538330033
+                    ],
+                    [
+                        -55.54687499999999,
+                        -14.647368383896618
+                    ]
+                ]
+            ]
+        }
+    };
+    queueFeature(conf.country, country, t.end);
+});
 tape('build queued features', (t) => {
     const q = queue();
     Object.keys(conf).forEach((c) => {
