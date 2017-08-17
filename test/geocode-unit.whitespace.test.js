@@ -10,27 +10,23 @@ const addFeature = require('../lib/util/addfeature'),
 const conf = {
     country: new mem({
         maxzoom: 6,
-        geocoder_address: 1,
+        geocoder_address: 0,
         geocoder_languages: ['en'],
-        collapseWhiteSpace: true
     }, () => {}),
     city: new mem({
         maxzoom: 6,
         geocoder_address: 0,
         geocoder_languages: ['en'],
-        collapseWhiteSpace: true
     }, () => {}),
     street: new mem({
         maxzoom: 6,
         geocoder_address: 1,
         geocoder_languages: ['en'],
-        collapseWhiteSpace: true
     }, () => {}),
     landmark: new mem({
         maxzoom: 6,
         geocoder_address: 0,
         geocoder_languages: ['en'],
-        collapseWhiteSpace: false
     }, () => {}),
 };
 const c = new Carmen(conf);
@@ -198,12 +194,12 @@ tape('query for "christ the redeemer, brazil"', (assert) => {
         assert.end();
     });
 });
-tape('test index contents for dict/christ the redeemer', (assert) => {
-    assert.equal(Array.from(conf.landmark._dictcache)[0], 'christ the redeemer', 'test index contents for christ the redeemer');
+tape('test index contents for dict/christtheredeemer', (assert) => {
+    assert.equal(Array.from(conf.landmark._dictcache)[0], 'christtheredeemer', 'test index contents for christ the redeemer');
     assert.end();
 });
-tape('test index contents for grid/christ the redeemer', (assert) => {
-    assert.equal(Array.from(conf.landmark._geocoder.grid.list())[0][0], 'christ the redeemer', 'test index contents for christ the redeemer');
+tape('test index contents for grid/christtheredeemer', (assert) => {
+    assert.equal(Array.from(conf.landmark._geocoder.grid.list())[0][0], 'christtheredeemer', 'test index contents for christ the redeemer');
     assert.end();
 });
 //language flag test to trigger WhiteSpace during getMatchingText();
