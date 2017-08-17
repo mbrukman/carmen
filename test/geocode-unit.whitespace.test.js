@@ -198,12 +198,12 @@ tape('query for "christ the redeemer, brazil"', (assert) => {
         assert.end();
     });
 });
-tape('test index contents for dict/christtheredeemer', (assert) => {
-    assert.equal(Array.from(conf.landmark._dictcache)[0], 'christtheredeemer', 'test index contents for christtheredeemer');
+tape('test index contents for dict/christ the redeemer', (assert) => {
+    assert.equal(Array.from(conf.landmark._dictcache)[0], 'christ the redeemer', 'test index contents for christ the redeemer');
     assert.end();
 });
-tape('test index contents for grid/christtheredeemer', (assert) => {
-    assert.equal(Array.from(conf.landmark._geocoder.grid.list())[0][0], 'christtheredeemer', 'test index contents for christtheredeemer');
+tape('test index contents for grid/christ the redeemer', (assert) => {
+    assert.equal(Array.from(conf.landmark._geocoder.grid.list())[0][0], 'christ the redeemer', 'test index contents for christ the redeemer');
     assert.end();
 });
 //language flag test to trigger WhiteSpace during getMatchingText();
@@ -211,7 +211,15 @@ tape('query: Wall St', (t) => {
     c.geocode('Wall St', { language: 'ar'}, (err, res) => {
         t.equal('Wall St', res.features[0].text, 'Fallback to English');
         t.equal('en', res.features[0].language, 'Language returned is English');
-        t.ifError(err);
+        t.ifError(err, 'no error');
+        t.end();
+    });
+});
+tape('query: Christ the Redeemer', (t) => {
+    c.geocode('Christ the Redeemer', { language: 'ar'}, (err, res) => {
+        t.equal('Christ the Redeemer', res.features[0].text, 'Fallback to English');
+        t.equal('en', res.features[0].language, 'Language returned is English');
+        t.ifError(err, 'no error');
         t.end();
     });
 });
