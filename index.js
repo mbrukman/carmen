@@ -4,6 +4,7 @@ var EventEmitter = require('events').EventEmitter,
     crypto = require('crypto');
 
 var dawgcache = require('./lib/util/dawg');
+var hun = require('nodehun');
 var cxxcache = require('./lib/util/cxxcache'),
     getContext = require('./lib/context'),
     loader = require('./lib/loader'),
@@ -37,6 +38,7 @@ function Geocoder(indexes, options) {
     this.bysubtype = {};
     this.bystack = {};
     this.byidx = [];
+    this.dic = new hun('', '');
 
     for (var k in indexes) {
         indexes[k] = clone(indexes[k]);
@@ -79,6 +81,10 @@ function Geocoder(indexes, options) {
             // avoid duplication if it's loaded again.
             source._original._geocoder = source._geocoder;
             source._original._dictcache = source._dictcache;
+
+            if (data.dic && fs.existsSync(data.dic)) {
+                this.dic.addDictionarySync(fs.readFileSync(data.dic));
+            }
 
             if (info.geocoder_address) {
                 source.geocoder_address = info.geocoder_address;
@@ -258,6 +264,7 @@ function Geocoder(indexes, options) {
                 var filename = source.getBaseFilename();
                 props.freq = filename + '.freq.rocksdb';
                 props.grid = filename + '.grid.rocksdb';
+                props.dic = filename + '.dic';
                 callback(null, props);
             });
         });
