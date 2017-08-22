@@ -4,7 +4,7 @@ var EventEmitter = require('events').EventEmitter,
     crypto = require('crypto');
 
 var dawgcache = require('./lib/util/dawg');
-var hun = require('nodehun');
+var nspell = require('nspell');
 var cxxcache = require('./lib/util/cxxcache'),
     getContext = require('./lib/context'),
     loader = require('./lib/loader'),
@@ -38,7 +38,7 @@ function Geocoder(indexes, options) {
     this.bysubtype = {};
     this.bystack = {};
     this.byidx = [];
-    this.dic = new hun('', '');
+    this.dic = nspell(Buffer('\n'));
 
     for (var k in indexes) {
         indexes[k] = clone(indexes[k]);
@@ -83,7 +83,9 @@ function Geocoder(indexes, options) {
             source._original._dictcache = source._dictcache;
 
             if (data.dic && fs.existsSync(data.dic)) {
-                this.dic.addDictionarySync(fs.readFileSync(data.dic));
+                this.dic.dictionary(fs.readFileSync(data.dic), new Buffer('\n'));
+            } else if (source.dic) {
+                this.dic.Dictionary(source.dic, new Buffer('\n'));
             }
 
             if (info.geocoder_address) {
@@ -264,7 +266,9 @@ function Geocoder(indexes, options) {
                 var filename = source.getBaseFilename();
                 props.freq = filename + '.freq.rocksdb';
                 props.grid = filename + '.grid.rocksdb';
-                props.dic = filename + '.dic';
+
+                if (!source.dic) props.dic = filename + '.dic';
+                else props.dic = source.dic
                 callback(null, props);
             });
         });
