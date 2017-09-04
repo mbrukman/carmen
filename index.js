@@ -147,7 +147,14 @@ function Geocoder(indexes, options) {
             lang.hash = crypto.createHash('sha512').update(JSON.stringify(lang.languages)).digest().toString('hex').slice(0,8);
             lang.lang_map = {};
             lang.languages.forEach(function(l, idx) { lang.lang_map[l] = idx; });
+            lang.lang_map['unmatched'] = 128; // @TODO verify this is the right approach
             source.lang = lang;
+
+            // decide whether to use the text normalization cache
+            source.use_normalization_cache = typeof info.use_normalization_cache == 'undefined' ? false : info.use_normalization_cache;
+            if (source.use_normalization_cache && fs.existsSync(data.norm) && !source._dictcache.normalizationCache) {
+                source._dictcache.loadNormalizationCache(data.norm);
+            }
 
             // add byname index lookup
             this.byname[name] = this.byname[name] || [];
@@ -258,6 +265,7 @@ function Geocoder(indexes, options) {
                 var filename = source.getBaseFilename();
                 props.freq = filename + '.freq.rocksdb';
                 props.grid = filename + '.grid.rocksdb';
+                props.norm = filename + '.norm.rocksdb';
                 callback(null, props);
             });
         });
