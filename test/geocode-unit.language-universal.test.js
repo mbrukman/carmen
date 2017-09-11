@@ -61,6 +61,7 @@ tape('index USA', (t) => {
             'carmen:text':'United States',
             'carmen:text_sv': 'USA',
             'carmen:text_universal':'US,USA',
+            'carmen:score': 1000,
             'carmen:zxy':['6/32/32'],
             'carmen:center':[0,0]
         }
@@ -74,6 +75,7 @@ tape('index Usak', (t) => {
         properties: {
             'carmen:text':'Usak',
             'carmen:text_en':'Usak',
+            'carmen:score': 100,
             'carmen:zxy':['6/32/32'],
             'carmen:center':[0,0]
         }
